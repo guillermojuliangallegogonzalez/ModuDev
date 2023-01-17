@@ -34,9 +34,10 @@ public class LoginController implements Initializable {
     }  
     
     //Función carga inicio de sesión
+    @FXML
     private void OnActionButtonIniciarSesion() throws IOException{
     
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("InicioAppAcademia.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("IniciarSesion.fxml"));
         VBox iniciarSesion = (VBox) fxmlLoader.load();
         try {
             loginVBox.getChildren().clear();
@@ -47,10 +48,19 @@ public class LoginController implements Initializable {
     }
     
     //Función carga crear cuenta
-    private void OnActionButtonCrearCuenta(){
+    @FXML
+    private void OnActionButtonCrearCuenta() throws IOException{
         
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CrearCuenta.fxml"));
+        VBox iniciarSesion = (VBox) fxmlLoader.load();
         
-        
+        try {
+            loginVBox.getChildren().clear();
+            loginVBox.getChildren().add(iniciarSesion);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
     }
     
 }

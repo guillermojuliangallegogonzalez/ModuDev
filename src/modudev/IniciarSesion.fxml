@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.textfield.CustomTextField?>
+
+<VBox fx:id="iniciarSesionVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modudev.IniciarSesionController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <JFXButton fx:id="backBtn" buttonType="RAISED" onAction="#volverInicio" style="-fx-background-color: #ffd463;" text="←" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="-160.0" />
+               </HBox.margin>
+            </JFXButton>
+            <ImageView fitHeight="75.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+               <image>
+                  <Image url="@../recursos/ModuDevAncho.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="110.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+      <VBox alignment="TOP_CENTER" prefHeight="156.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="78.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Correo Electrónico" wrappingWidth="297.21630859375" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="71.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <CustomTextField fx:id="emailTF" prefHeight="29.0" prefWidth="300.0" promptText="ejemplo@gmail.com" style="-fx-border-color: #ffd463;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="12.0" />
+                     </HBox.margin>
+                  </CustomTextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="179.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="29.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" wrappingWidth="299.21630859375" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="103.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <CustomTextField fx:id="contraseñaTF" prefHeight="29.0" prefWidth="300.0" promptText="1234567890" style="-fx-border-color: #ffd463;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="11.0" />
+                     </HBox.margin>
+                  </CustomTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <JFXButton buttonType="RAISED" style="-fx-background-color: #ffd463;" text="Iniciar Sesión" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="BOTTOM_CENTER" prefHeight="92.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Todos los derechos reservados ModuDev ©" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin>
+            </Text>
+         </children>
+      </VBox>
+   </children>
+</VBox>
