@@ -1,0 +1,13 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+/*<--Modo Oscuro-->*/
+.interfaz-background-black{
+    -fx-background-color: #151928;
+}
+
+/*<--Modo Claro-->*/
+.interfaz-background-white{
+    
+}

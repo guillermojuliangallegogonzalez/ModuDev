@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox prefHeight="850.0" prefWidth="223.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton />
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <HBox prefHeight="50.0" prefWidth="1600.0" styleClass="interfaz-background-black" stylesheets="@interfazalumno.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="177.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../recursos/ModuDev_Blanco_Horizontal.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="15.0" top="6.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1420.0">
+               <children>
+                  <JFXComboBox prefHeight="26.0" prefWidth="119.0" promptText="Asignaturas" style="-jfx-unfocus-color: white;">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </JFXComboBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
