@@ -39,7 +39,7 @@ public class SplashScreenAlumnoController implements Initializable {
                 Platform.runLater(() -> {
                     Parent root = null;
                     try {
-                        root = FXMLLoader.load(getClass().getClassLoader().getResource("../alumno/InterfazAlumno.fxml"));
+                        root = FXMLLoader.load(getClass().getResource("/alumno/InterfazAlumno.fxml"));
                     } catch (IOException ex) {
                         Logger.getLogger(SplashScreenAlumnoController.class.getName()).log(Level.SEVERE, null, ex);
                     }
