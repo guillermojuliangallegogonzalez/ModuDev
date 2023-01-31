@@ -8,22 +8,16 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <left>
-      <VBox prefHeight="850.0" prefWidth="223.0" BorderPane.alignment="CENTER">
-         <children>
-            <JFXButton />
-         </children>
-      </VBox>
-   </left>
    <top>
       <HBox prefHeight="50.0" prefWidth="1600.0" styleClass="interfaz-background-black" stylesheets="@interfazalumno.css" BorderPane.alignment="CENTER">
          <children>
             <HBox prefHeight="50.0" prefWidth="177.0" HBox.hgrow="ALWAYS">
                <children>
-                  <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                  <ImageView fx:id="logoModudev" fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                      <image>
                         <Image url="@../recursos/ModuDev_Blanco_Horizontal.png" />
                      </image>
@@ -35,14 +29,93 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1420.0">
                <children>
-                  <JFXComboBox prefHeight="26.0" prefWidth="119.0" promptText="Asignaturas" style="-jfx-unfocus-color: white;">
+                  <JFXComboBox fx:id="asignaturasComboBox" prefHeight="26.0" prefWidth="119.0" promptText="Asignaturas" styleClass="combobox-barra-superior" stylesheets="@interfazalumno.css">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
                   </JFXComboBox>
+                  <JFXComboBox fx:id="profesoresComboBox" prefHeight="27.0" prefWidth="96.0" promptText="Profesores" styleClass="combobox-barra-superior" stylesheets="@interfazalumno.css">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </JFXComboBox>
+                  <JFXButton fx:id="calendarioComboBox" buttonType="RAISED" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazalumno.css" text="Calendario">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_RIGHT" prefHeight="50.0" prefWidth="437.0">
+               <children>
+                  <ImageView fx:id="perfilImg" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets right="10.0" top="5.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../recursos/ModuDev.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="ajustesImg" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../recursos/ajustes.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
                </children>
             </HBox>
          </children>
       </HBox>
    </top>
+   <left>
+      <VBox prefHeight="850.0" prefWidth="223.0" styleClass="interfaz-menu-lateral" stylesheets="@interfazalumno.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="75.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="fotoPerfil" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="7.0" top="7.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../recursos/ModuDev.png" />
+                     </image>
+                  </ImageView>
+                  <VBox prefHeight="75.0" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets left="4.0" />
+                     </HBox.margin>
+                     <children>
+                        <Text fx:id="nombrePerfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto-menu-alumno" text="Nombre" textAlignment="CENTER" wrappingWidth="148.21630859375">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="apellidosPerfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto-menu-alumno" text="Apellidos" textAlignment="CENTER" wrappingWidth="149.21630859375">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="ajustesPerfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="config-menu-lateral" text="Configuración perfil" textAlignment="CENTER" wrappingWidth="147.21630859375">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
 </BorderPane>

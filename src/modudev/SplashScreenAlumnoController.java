@@ -13,16 +13,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+
 
 /**
  * FXML Controller class
  *
  * @author guillermogallegogonzalez
  */
-public class SplashScreenController implements Initializable {
+public class SplashScreenAlumnoController implements Initializable {
 
     //Variables
     @FXML
@@ -40,9 +39,9 @@ public class SplashScreenController implements Initializable {
                 Platform.runLater(() -> {
                     Parent root = null;
                     try {
-                        root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+                        root = FXMLLoader.load(getClass().getClassLoader().getResource("../alumno/InterfazAlumno.fxml"));
                     } catch (IOException ex) {
-                        Logger.getLogger(SplashScreenController.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(SplashScreenAlumnoController.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     Scene scene = new Scene(root);
                     Stage stage = new Stage();
@@ -60,8 +59,6 @@ public class SplashScreenController implements Initializable {
 
                     stage.getIcons().add(new Image("/recursos/ModuDev.png"));
                     stage.setTitle("ModuDev");
-                    stage.initStyle(StageStyle.TRANSPARENT);
-                    scene.setFill(Color.TRANSPARENT);
                     stage.setScene(scene);
                     stage.show();
 
@@ -69,7 +66,7 @@ public class SplashScreenController implements Initializable {
                 });
 
             } catch (InterruptedException ex) {
-                Logger.getLogger(SplashScreenController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(SplashScreenAlumnoController.class.getName()).log(Level.SEVERE, null, ex);
 
             }
 

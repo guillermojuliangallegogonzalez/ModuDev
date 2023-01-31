@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
@@ -21,6 +22,8 @@ public class MainController implements Initializable {
     @FXML
     private VBox vbox;
     private Parent fxml;
+    @FXML
+    public AnchorPane anchorPrincipal;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -68,6 +71,10 @@ public class MainController implements Initializable {
 
             }
         });
+    }
+    
+    public void closeLogin(){
+        anchorPrincipal.getScene().getWindow().hide();
     }
 
 }
