@@ -14,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -33,11 +34,13 @@ public class InterfazAlumnoController implements Initializable {
     @FXML
     private JFXComboBox<?> profesoresComboBox;
     @FXML
-    private JFXButton calendarioComboBox;
-    @FXML
     private ImageView perfilImg;
     @FXML
     private ImageView ajustesImg;
+    @FXML
+    private HBox menuSuperior;
+    @FXML
+    private JFXButton añadirBtn;
 
     /**
      * Initializes the controller class.
@@ -61,7 +64,9 @@ public class InterfazAlumnoController implements Initializable {
         Stage stage = new Stage();
         
         stage.getIcons().add(new Image("/recursos/ModuDev.png"));
+        //stage.initStyle(StageStyle.UTILITY);
         stage.setTitle("ModuDev - Ajustes Perfil");
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
 

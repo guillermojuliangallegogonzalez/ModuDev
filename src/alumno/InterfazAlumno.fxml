@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alumno.InterfazAlumnoController">
    <top>
@@ -25,22 +26,25 @@
                   </ImageView>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1420.0">
+            <HBox fx:id="menuSuperior" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1420.0">
                <children>
                   <JFXComboBox fx:id="asignaturasComboBox" prefHeight="26.0" prefWidth="119.0" promptText="Asignaturas" styleClass="combobox-barra-superior" stylesheets="@interfazalumno.css">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
                   </JFXComboBox>
-                  <JFXComboBox fx:id="profesoresComboBox" prefHeight="27.0" prefWidth="96.0" promptText="Profesores" styleClass="combobox-barra-superior" stylesheets="@interfazalumno.css">
+                  <JFXComboBox fx:id="profesoresComboBox" prefHeight="27.0" prefWidth="102.0" promptText="Profesores" styleClass="combobox-barra-superior" stylesheets="@interfazalumno.css">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
                   </JFXComboBox>
-                  <JFXButton fx:id="calendarioComboBox" buttonType="RAISED" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazalumno.css" text="Calendario">
+                  <JFXButton fx:id="añadirBtn" buttonType="RAISED" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazalumno.css" text="+">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
                   </JFXButton>
                </children>
             </HBox>
@@ -68,16 +72,9 @@
       </HBox>
    </top>
    <left>
-      <VBox alignment="CENTER" prefHeight="850.0" prefWidth="169.0" styleClass="interfaz-menu-lateral" stylesheets="@interfazalumno.css" BorderPane.alignment="CENTER">
-         <children>
-            <HBox prefHeight="75.0" prefWidth="200.0">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="75.0" prefWidth="200.0" />
-            <HBox prefHeight="75.0" prefWidth="200.0" />
-         </children>
-      </VBox>
+      <VBox alignment="CENTER" prefHeight="850.0" prefWidth="169.0" styleClass="interfaz-menu-lateral" stylesheets="@interfazalumno.css" BorderPane.alignment="CENTER" />
    </left>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="1437.0" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>

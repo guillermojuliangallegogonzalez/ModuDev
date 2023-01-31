@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #151928;" stylesheets="@añadirmenu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="añadirMenuAlumno.AñadirMenuController">
+   <children>
+      <JFXToggleButton fx:id="asignaturasTB" layoutX="69.0" layoutY="26.0" styleClass="interfaz-background-black" stylesheets="@añadirmenu.css" text="Asignaturas">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXToggleButton>
+      <JFXToggleButton fx:id="profesoresTB" layoutX="369.0" layoutY="26.0" styleClass="interfaz-background-black" stylesheets="@añadirmenu.css" text="Profesores">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXToggleButton>
+      <JFXToggleButton fx:id="calendarioTB" layoutX="73.0" layoutY="100.0" styleClass="interfaz-background-black" stylesheets="@añadirmenu.css" text="Calendario">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXToggleButton>
+      <JFXToggleButton fx:id="navegadorTB" layoutX="368.0" layoutY="100.0" styleClass="interfaz-background-black" stylesheets="@añadirmenu.css" text="Navegador">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXToggleButton>
+      <JFXToggleButton fx:id="homeTB" layoutX="74.0" layoutY="170.0" styleClass="interfaz-background-black" stylesheets="@añadirmenu.css" text="Home">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXToggleButton>
+      <JFXToggleButton fx:id="comprimirTB" layoutX="370.0" layoutY="170.0" styleClass="interfaz-background-black" stylesheets="@añadirmenu.css" text="Comprimir">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXToggleButton>
+      <JFXToggleButton fx:id="soporteTB" layoutX="74.0" layoutY="242.0" styleClass="interfaz-background-black" stylesheets="@añadirmenu.css" text="Soporte">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXToggleButton>
+      <JFXToggleButton layoutX="369.0" layoutY="242.0" styleClass="interfaz-background-black" stylesheets="@añadirmenu.css" text="Profesores">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXToggleButton>
+      <Line endY="126.0" layoutX="300.0" layoutY="167.0" startY="-120.0" stroke="WHITE" />
+      <Button layoutX="86.0" layoutY="316.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="429.0" styleClass="interfaz-background-green" stylesheets="@añadirmenu.css" text="Aceptar" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

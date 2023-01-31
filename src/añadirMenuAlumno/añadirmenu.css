@@ -1,0 +1,13 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.interfaz-background-black{
+   -fx-text-fill: white;
+}
+
+.interfaz-background-green{
+   -fx-background-color: #166d52;
+    -fx-background-radius: 5px;
+    -fx-text-fill: white;
+}
