@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="600.0" styleClass="background-black-ajustes" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="perfil.AjustesPerfilController">
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="600.0" styleClass="background-black-ajustes" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="perfil.AjustesPerfilController">
     <stylesheets>
         <URL value="@ajustesperfil.css" />
     </stylesheets>
@@ -54,12 +54,12 @@
       </Label>
       <JFXDatePicker fx:id="nacimientoDP" defaultColor="#4059a9" layoutX="336.0" layoutY="187.0" prefHeight="27.0" prefWidth="230.0" />
       <JFXTextArea layoutX="14.0" layoutY="239.0" prefHeight="110.0" prefWidth="572.0" promptText="Biografía (Máximo 200 caractéres)" styleClass="biografia-black-ajustes" unFocusColor="WHITE" />
-      <Button layoutX="28.0" layoutY="371.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="259.0" styleClass="red-btn" text="Cancelar Cambios">
+      <Button fx:id="cancelarBtn" layoutX="28.0" layoutY="371.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="259.0" styleClass="red-btn" text="Cancelar Cambios">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="311.0" layoutY="371.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="259.0" styleClass="blue-btn" text="Guardar Cambios">
+      <Button fx:id="guardarBtn" layoutX="311.0" layoutY="371.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="259.0" styleClass="blue-btn" text="Guardar Cambios">
          <font>
             <Font size="16.0" />
          </font>

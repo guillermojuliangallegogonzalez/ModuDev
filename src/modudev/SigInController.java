@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import metodos.MetodosComunes;
 import modudev.MainController;
 
@@ -58,10 +60,16 @@ public class SigInController implements Initializable {
         }
         Scene scene = new Scene(root);
         Stage stage = new Stage();
+        
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.getIcons().add(new Image("/recursos/ModuDev.png"));
         stage.setTitle("ModuDev");
         stage.setScene(scene);
         stage.show();
+        
+        //Cerramos la ventana
+        stage = (Stage) iniciarSesionBtn.getScene().getWindow();
+        stage.close();
 
     }
 

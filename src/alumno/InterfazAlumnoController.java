@@ -2,12 +2,22 @@ package alumno;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import modudev.SplashScreenAlumnoController;
 
 /**
  * FXML Controller class
@@ -28,14 +38,6 @@ public class InterfazAlumnoController implements Initializable {
     private ImageView perfilImg;
     @FXML
     private ImageView ajustesImg;
-    @FXML
-    private ImageView fotoPerfil;
-    @FXML
-    private Text nombrePerfil;
-    @FXML
-    private Text apellidosPerfil;
-    @FXML
-    private Text ajustesPerfil;
 
     /**
      * Initializes the controller class.
@@ -44,5 +46,25 @@ public class InterfazAlumnoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+    //Ejecutar Ajustes perfil
+    @FXML
+    public void iniciarAjustes() throws IOException {
+
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/perfil/AjustesPerfil.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(SplashScreenAlumnoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        
+        stage.getIcons().add(new Image("/recursos/ModuDev.png"));
+        stage.setTitle("ModuDev - Ajustes Perfil");
+        stage.setScene(scene);
+        stage.show();
+
+    }
     
 }
