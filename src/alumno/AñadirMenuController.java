@@ -1,5 +1,6 @@
-package añadirMenuAlumno;
+package alumno;
 
+import static alumno.InterfazAlumnoController.asignaturasComboBox;
 import com.jfoenix.controls.JFXToggleButton;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -34,6 +35,13 @@ public class AñadirMenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        cambiarShortCuts();
     }    
+    
+    public static void cambiarShortCuts(){
+    
+        asignaturasComboBox.hide();
+        
+    }
     
 }
