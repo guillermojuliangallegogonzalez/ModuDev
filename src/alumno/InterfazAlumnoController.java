@@ -1,5 +1,6 @@
 package alumno;
 
+import añadirShortCuts.AñadirMenuController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class InterfazAlumnoController implements Initializable {
     @FXML
     private ImageView logoModudev;
     @FXML
-    public static JFXComboBox<?> asignaturasComboBox;
+    private JFXComboBox<?> asignaturasComboBox;
     @FXML
     private JFXComboBox<?> profesoresComboBox;
     @FXML
@@ -49,7 +50,7 @@ public class InterfazAlumnoController implements Initializable {
     @FXML
     private JFXButton soporteBtn;
     @FXML
-    private BorderPane modudevAplicacion;
+    private BorderPane modudevInterfaz;
 
     /**
      * Initializes the controller class.
@@ -86,7 +87,7 @@ public class InterfazAlumnoController implements Initializable {
 
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("AñadirMenu.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/añadirShortCuts/AñadirMenu.fxml"));
         } catch (IOException ex) {
             Logger.getLogger(AñadirMenuController.class.getName()).log(Level.SEVERE, null, ex);
         }

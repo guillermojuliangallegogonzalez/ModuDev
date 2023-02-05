@@ -107,6 +107,6 @@
       <VBox alignment="CENTER" prefHeight="850.0" prefWidth="169.0" styleClass="interfaz-menu-lateral" stylesheets="@interfazalumno.css" BorderPane.alignment="CENTER" />
    </left>
    <center>
-      <BorderPane fx:id="modudevAplicacion" prefHeight="200.0" prefWidth="1437.0" BorderPane.alignment="CENTER" />
+      <BorderPane fx:id="modudevInterfaz" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

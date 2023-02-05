@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #151928;" stylesheets="@añadirmenu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alumno.AñadirMenuController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #151928;" stylesheets="@añadirmenu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="añadirShortCuts.AñadirMenuController">
    <children>
       <JFXToggleButton fx:id="asignaturasTB" layoutX="69.0" layoutY="26.0" styleClass="interfaz-background-black" stylesheets="@añadirmenu.css" text="Asignaturas">
          <font>
