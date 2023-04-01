@@ -1,15 +1,17 @@
 package nomenglaturaZip;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
-import java.util.zip.DeflaterOutputStream;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -17,6 +19,11 @@ import javafx.fxml.Initializable;
  * @author guillermo
  */
 public class ZipController implements Initializable {
+
+    @FXML
+    private AnchorPane AnchorPane;
+    @FXML
+    private Button SelecArch;
 
     /**
      * Initializes the controller class.
@@ -26,23 +33,17 @@ public class ZipController implements Initializable {
         // TODO
     }
 
-    public static void compressFile(File raw, File compressed)
-            throws IOException {
-        InputStream in = new FileInputStream(raw);
-        OutputStream out
-                = new DeflaterOutputStream(new FileOutputStream(compressed));
-        shovelInToOut(in, out);
-        in.close();
-        out.close();
-    }
+    private void AñadirZip() {
 
-    private static void shovelInToOut(InputStream in, OutputStream out)
-            throws IOException {
-        byte[] buffer = new byte[1000];
-        int len;
-        while ((len = in.read(buffer)) > 0) {
-            out.write(buffer, 0, len);
-        }
+        Stage stage = new Stage();
+        ListView<File> filesList = new ListView<>();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Seleccionar archivos");
+        List<File> selectedFiles = fileChooser.showOpenMultipleDialog(stage);
+        Scene scene = new Scene(AnchorPane);
+        stage.setScene(scene);
+        stage.show();
+
     }
 
 }

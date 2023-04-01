@@ -1,9 +1,12 @@
 package alumno;
 
-import añadirShortCuts.AñadirMenuController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import java.awt.Desktop;
+import static java.awt.Desktop.getDesktop;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -19,6 +22,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import modudev.SplashScreenAlumnoController;
+import nomenglaturaZip.ZipController;
 
 /**
  * FXML Controller class
@@ -40,8 +44,6 @@ public class InterfazAlumnoController implements Initializable {
     @FXML
     private HBox menuSuperior;
     @FXML
-    private JFXButton añadirBtn;
-    @FXML
     private JFXButton calendarioBtn;
     @FXML
     private JFXButton navegadorBtn;
@@ -58,8 +60,8 @@ public class InterfazAlumnoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
     //Ejecutar Ajustes perfil
     @FXML
     public void iniciarAjustes() throws IOException {
@@ -72,7 +74,7 @@ public class InterfazAlumnoController implements Initializable {
         }
         Scene scene = new Scene(root);
         Stage stage = new Stage();
-        
+
         stage.getIcons().add(new Image("/recursos/ModuDev.png"));
         stage.setTitle("ModuDev - Ajustes Perfil");
         stage.setResizable(false);
@@ -80,27 +82,37 @@ public class InterfazAlumnoController implements Initializable {
         stage.show();
 
     }
-    
-    //Ejecutar Ajustes perfil
+
+    //Ejecutar Herramienta de Compresión
     @FXML
-    public void iniciarAjustesBarra() throws IOException {
+    public void iniciarZip() throws IOException {
 
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/añadirShortCuts/AñadirMenu.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/nomenglaturaZip/Zip.fxml"));
         } catch (IOException ex) {
-            Logger.getLogger(AñadirMenuController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ZipController.class.getName()).log(Level.SEVERE, null, ex);
         }
         Scene scene = new Scene(root);
         Stage stage = new Stage();
-        
+
         stage.getIcons().add(new Image("/recursos/ModuDev.png"));
-        stage.setTitle("ModuDev - Ajustes ShortCuts");
+        stage.setTitle("ModuDev - Herramienta Compresión");
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
 
     }
-    
-    
+
+    public void iniciarNavegador() throws URISyntaxException, IOException {
+        if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+            Desktop.getDesktop().browse(new URI("https://www.google.es/"));
+        }
+    }
+
+    public void iniciarSoporte() throws URISyntaxException, IOException {
+        Desktop desktop = getDesktop();
+        desktop.mail(new URI("mailto:guillermojulian.gallegogonzalez@gmail.com"));
+    }
+
 }
