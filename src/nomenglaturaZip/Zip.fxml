@@ -21,7 +21,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="319.0" layoutY="364.0" mnemonicParsing="false" onAction="#AñadirZip" prefHeight="40.0" prefWidth="259.0" styleClass="blue-btn" stylesheets="@zip.css" text="¡ Comprimir !">
+      <Button layoutX="319.0" layoutY="364.0" mnemonicParsing="false" onAction="#comprimirZip" prefHeight="40.0" prefWidth="259.0" styleClass="blue-btn" stylesheets="@zip.css" text="¡ Comprimir !">
          <font>
             <Font size="18.0" />
          </font>
@@ -31,18 +31,33 @@
             <Image url="@../recursos/zip_logo.png" />
          </image>
       </ImageView>
-      <ComboBox layoutX="319.0" layoutY="133.0" prefHeight="27.0" prefWidth="259.0" />
-      <Label layoutX="319.0" layoutY="96.0" prefHeight="27.0" prefWidth="250.0" text="Asignatura" textFill="WHITE">
+      <ComboBox fx:id="asignaturaCB" layoutX="319.0" layoutY="118.0" prefHeight="27.0" prefWidth="259.0" />
+      <Label layoutX="319.0" layoutY="81.0" prefHeight="27.0" prefWidth="250.0" text="Asignatura" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="319.0" layoutY="173.0" prefHeight="27.0" prefWidth="250.0" text="Tema" textFill="WHITE">
+      <Label layoutX="319.0" layoutY="158.0" prefHeight="27.0" prefWidth="250.0" text="Tema" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="319.0" layoutY="207.0" prefHeight="27.0" prefWidth="259.0" />
-      <Button fx:id="SelecArch" layoutX="374.0" layoutY="266.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Seleccionar Archivos" />
+      <TextField fx:id="temaTF" layoutX="319.0" layoutY="192.0" prefHeight="27.0" prefWidth="259.0" />
+      <Button fx:id="SelecArch" layoutX="319.0" layoutY="251.0" mnemonicParsing="false" onAction="#AñadirZip" prefHeight="30.0" prefWidth="140.0" text="Seleccionar Archivos" />
+      <Button fx:id="selectRuta" layoutX="319.0" layoutY="302.0" mnemonicParsing="false" onAction="#añadirRuta" prefHeight="30.0" prefWidth="140.0" text="Seleccionar Ruta Compresión">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Label fx:id="archText" layoutX="474.0" layoutY="258.0" prefHeight="17.0" prefWidth="99.0" text="No seleccionado" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="rutaText" layoutX="474.0" layoutY="308.0" prefHeight="17.0" prefWidth="99.0" text="No seleccionado" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

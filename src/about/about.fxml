@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="800.0" styleClass="background-black-zip" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="about.AboutController">
+    <stylesheets>
+        <URL value="@about.css" />
+    </stylesheets>
+   <children>
+      <VBox alignment="CENTER" layoutY="320.0" prefHeight="80.0" prefWidth="800.0" style="-fx-background-color: #869BAD;">
+         <children>
+            <Label prefHeight="17.0" prefWidth="772.0" text="Queda prohibido copiar, reproducir, distribuir, publicar, transmitir, difundir, o en cualquier modo explotar cualquier parte de este servicio sin la " textFill="WHITE" />
+            <Label prefHeight="17.0" prefWidth="772.0" text="autorización previa por escrito de ModuDev o de los titulares correspondientes. Sin embargo, usted podrá bajar material a su computadora " textFill="WHITE" />
+            <Label prefHeight="17.0" prefWidth="772.0" text="personal para uso exclusivamente personal o educacional y no comercial limitado a una copia por página. Usted no podrá remover o alterar" textFill="WHITE" />
+            <Label prefHeight="17.0" prefWidth="772.0" text="de la copia ninguna leyenda de Derechos de Autor o la que manifieste la autoría del material. " textFill="WHITE" />
+         </children>
+      </VBox>
+      <Separator layoutY="60.0" prefWidth="800.0" />
+      <Label layoutX="342.0" layoutY="14.0" text="ModuDev" textFill="WHITE">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Separator layoutY="197.0" prefWidth="800.0" />
+      <Label layoutX="321.0" layoutY="152.0" text="Desarrollador" textFill="WHITE">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="79.0" text="- Versión: 1.0" textFill="WHITE" />
+      <Label layoutX="71.0" layoutY="96.0" text="- Plataforma: Java" textFill="WHITE" />
+      <Label layoutX="71.0" layoutY="113.0" text="- Versión Java: 1.8" textFill="WHITE" />
+      <Label layoutX="244.0" layoutY="79.0" text="-JavaFX" textFill="WHITE" />
+      <Label layoutX="244.0" layoutY="96.0" text="- TilesFX" textFill="WHITE" />
+      <Label layoutX="244.0" layoutY="113.0" text="- BootstraoFX" textFill="WHITE" />
+      <Label layoutX="361.0" layoutY="79.0" text="- FormFX" textFill="WHITE" />
+      <Label layoutX="361.0" layoutY="96.0" text="- IkoliFX" textFill="WHITE" />
+      <Label layoutX="361.0" layoutY="113.0" text="- ValidatorFX" textFill="WHITE" />
+      <ImageView fitHeight="60.0" fitWidth="243.0" layoutX="500.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/ModuDev_Blanco_Horizontal.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="94.0" fitWidth="100.0" layoutX="51.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/Guillermo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="163.0" layoutY="214.0" text="Guillermo Julián Gallego González" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="161.0" layoutY="243.0" text="- Desarrollador de aplicaciones multiplataforma" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="163.0" layoutY="261.0" text="- FullStack" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="494.0" layoutY="232.0" onMouseClicked="#github" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/github.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="563.0" layoutY="232.0" onMouseClicked="#web" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/ux.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="639.0" layoutY="232.0" onMouseClicked="#instagram" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/instagram.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="710.0" layoutY="232.0" onMouseClicked="#linkedin" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/linkedin.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
