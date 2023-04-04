@@ -2,6 +2,7 @@ package modudev;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,7 +41,7 @@ public class SplashScreenController implements Initializable {
                 Platform.runLater(() -> {
                     Parent root = null;
                     try {
-                        root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+                        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Main.fxml")));
                     } catch (IOException ex) {
                         Logger.getLogger(SplashScreenController.class.getName()).log(Level.SEVERE, null, ex);
                     }

@@ -9,6 +9,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.util.Objects;
+
 /**
  *
  * @author guillermogallego
@@ -20,7 +22,7 @@ public class Launcher extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("SplashScreen.fxml"));        
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SplashScreen.fxml")));
         Scene scene = new Scene(root);
         
         //Movimiento Escena undecorated

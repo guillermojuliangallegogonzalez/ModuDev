@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ModuDev2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/ModuDev.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

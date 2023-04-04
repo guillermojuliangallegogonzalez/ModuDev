@@ -1,0 +1,30 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+/*<-- MODO OSCURO-->*/
+
+.background-black-ajustes{
+    -fx-background-color: #151928;
+}
+
+.texto-black-ajustes{
+    -fx-text-fill: white;
+}
+
+.biografia-black-ajustes{
+    -fx-text-fill: white;
+    -fx-highlight-fill: white;
+}
+
+.red-btn{
+    -fx-background-color: #FC0137;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #ffffff;
+}
+
+.blue-btn{
+    -fx-background-color: #2196f3;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #ffffff;
+}

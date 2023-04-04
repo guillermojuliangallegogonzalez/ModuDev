@@ -71,8 +71,7 @@ public class ZipController implements Initializable {
         ListView<File> filesList = new ListView<>();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Seleccionar archivos");
-        List<File> selectedFiles = fileChooser.showOpenMultipleDialog(AnchorPane.getScene().getWindow());
-        this.archivos = selectedFiles;
+        this.archivos = fileChooser.showOpenMultipleDialog(AnchorPane.getScene().getWindow());
 
         if (archivos != null) {
 

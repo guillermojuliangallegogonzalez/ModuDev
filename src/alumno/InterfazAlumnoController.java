@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -89,7 +90,7 @@ public class InterfazAlumnoController implements Initializable {
 
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/perfil/AjustesPerfil.fxml"));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/perfil/AjustesPerfil.fxml")));
         } catch (IOException ex) {
             Logger.getLogger(SplashScreenAlumnoController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -110,7 +111,7 @@ public class InterfazAlumnoController implements Initializable {
 
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/nomenglaturaZip/Zip.fxml"));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/nomenglaturaZip/Zip.fxml")));
         } catch (IOException ex) {
             Logger.getLogger(ZipController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -131,7 +132,7 @@ public class InterfazAlumnoController implements Initializable {
 
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/about/about.fxml"));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/about/about.fxml")));
         } catch (IOException ex) {
             Logger.getLogger(AboutController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -165,7 +166,7 @@ public class InterfazAlumnoController implements Initializable {
 
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/chatgpt/chatGPT.fxml"));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/chatgpt/chatGPT.fxml")));
         } catch (IOException ex) {
             Logger.getLogger(ChatGPTController.class.getName()).log(Level.SEVERE, null, ex);
         }

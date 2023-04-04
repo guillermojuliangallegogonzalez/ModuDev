@@ -1,0 +1,19 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.background-black-zip{
+    -fx-background-color: #151928;
+}
+
+.red-btn{
+    -fx-background-color: #FC0137;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #ffffff;
+}
+
+.blue-btn{
+    -fx-background-color: #2196f3;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #ffffff;
+}

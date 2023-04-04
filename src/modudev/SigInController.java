@@ -2,6 +2,7 @@ package modudev;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -54,7 +55,7 @@ public class SigInController implements Initializable {
 
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("SplashScreenAlumno.fxml"));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SplashScreenAlumno.fxml")));
         } catch (IOException ex) {
             Logger.getLogger(SplashScreenAlumnoController.class.getName()).log(Level.SEVERE, null, ex);
         }

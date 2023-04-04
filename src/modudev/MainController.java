@@ -2,6 +2,7 @@ package modudev;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
@@ -32,7 +33,7 @@ public class MainController implements Initializable {
         t.play();
         t.setOnFinished((e) -> {
             try {
-                fxml = FXMLLoader.load(getClass().getResource("SigIn.fxml"));
+                fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SigIn.fxml")));
                 vbox.getChildren().removeAll();
                 vbox.getChildren().setAll(fxml);
             } catch (IOException ex) {
@@ -48,7 +49,7 @@ public class MainController implements Initializable {
         t.play();
         t.setOnFinished((e) -> {
             try {
-                fxml = FXMLLoader.load(getClass().getResource("SigIn.fxml"));
+                fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SigIn.fxml")));
                 vbox.getChildren().removeAll();
                 vbox.getChildren().setAll(fxml);
             } catch (IOException ex) {
@@ -64,7 +65,7 @@ public class MainController implements Initializable {
         t.play();
         t.setOnFinished((e) -> {
             try {
-                fxml = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
+                fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SignUp.fxml")));
                 vbox.getChildren().removeAll();
                 vbox.getChildren().setAll(fxml);
             } catch (IOException ex) {
