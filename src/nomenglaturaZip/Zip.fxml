@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,38 +17,35 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button layoutX="29.0" layoutY="364.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="259.0" styleClass="red-btn" stylesheets="@zip.css" text="Cancelar Compresión">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="319.0" layoutY="364.0" mnemonicParsing="false" onAction="#comprimirZip" prefHeight="40.0" prefWidth="259.0" styleClass="blue-btn" stylesheets="@zip.css" text="¡ Comprimir !">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="84.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../recursos/zip_logo.png" />
-         </image>
-      </ImageView>
-      <ComboBox fx:id="asignaturaCB" layoutX="319.0" layoutY="118.0" prefHeight="27.0" prefWidth="259.0" />
       <Label layoutX="319.0" layoutY="81.0" prefHeight="27.0" prefWidth="250.0" text="Asignatura" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <ComboBox fx:id="asignaturaCB" layoutX="319.0" layoutY="118.0" prefHeight="27.0" prefWidth="259.0">
+         <tooltip>
+            <Tooltip text="Seleccione una provincia" />
+         </tooltip></ComboBox>
       <Label layoutX="319.0" layoutY="158.0" prefHeight="27.0" prefWidth="250.0" text="Tema" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="temaTF" layoutX="319.0" layoutY="192.0" prefHeight="27.0" prefWidth="259.0" />
-      <Button fx:id="SelecArch" layoutX="319.0" layoutY="251.0" mnemonicParsing="false" onAction="#AñadirZip" prefHeight="30.0" prefWidth="140.0" text="Seleccionar Archivos" />
+      <TextField fx:id="temaTF" layoutX="319.0" layoutY="192.0" prefHeight="27.0" prefWidth="259.0">
+         <tooltip>
+            <Tooltip text="Sólo se permiten caracteres de tipo numérico" />
+         </tooltip></TextField>
+      <Button fx:id="SelecArch" layoutX="319.0" layoutY="251.0" mnemonicParsing="false" onAction="#AñadirZip" prefHeight="30.0" prefWidth="140.0" text="Seleccionar Archivos">
+         <tooltip>
+            <Tooltip text="Selecciona los archivos a comprimir" />
+         </tooltip></Button>
       <Button fx:id="selectRuta" layoutX="319.0" layoutY="302.0" mnemonicParsing="false" onAction="#añadirRuta" prefHeight="30.0" prefWidth="140.0" text="Seleccionar Ruta Compresión">
          <font>
             <Font size="10.0" />
          </font>
+         <tooltip>
+            <Tooltip text="Slecciona la ruta donde se va a guardar el zip" />
+         </tooltip>
       </Button>
       <Label fx:id="archText" layoutX="474.0" layoutY="258.0" prefHeight="17.0" prefWidth="99.0" text="No seleccionado" textFill="RED">
          <font>
@@ -59,5 +57,26 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <Button layoutX="29.0" layoutY="364.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="259.0" styleClass="red-btn" stylesheets="@zip.css" text="Cancelar Compresión">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="Cancelar compresión" />
+         </tooltip>
+      </Button>
+      <Button layoutX="319.0" layoutY="364.0" mnemonicParsing="false" onAction="#comprimirZip" prefHeight="40.0" prefWidth="259.0" styleClass="blue-btn" stylesheets="@zip.css" text="¡ Comprimir !">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="Comprimir archivos" />
+         </tooltip>
+      </Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="84.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/zip_logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

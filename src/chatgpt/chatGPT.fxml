@@ -6,21 +6,44 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="interfaz-background-black" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="chatgpt.ChatGPTController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="interfaz-background-black" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chatgpt.ChatGPTController">
     <stylesheets>
         <URL value="@chatgpt.css" />
     </stylesheets>
    <children>
-      <TextField fx:id="barraChat" layoutX="200.0" layoutY="571.0" prefHeight="30.0" prefWidth="550.0" />
+      <TextField fx:id="barraChat" layoutX="200.0" layoutY="571.0" prefHeight="30.0" prefWidth="550.0">
+         <tooltip>
+            <Tooltip text="Permite introducir texto para enviarlo después a ChatGPT." />
+         </tooltip></TextField>
       <Button fx:id="enviarBtn" layoutX="750.0" layoutY="571.0" mnemonicParsing="false" onAction="#enviarMensaje" prefHeight="30.0" prefWidth="50.0" text="➤">
          <font>
             <Font size="15.0" />
          </font>
+         <tooltip>
+            <Tooltip text="Enviar el texto escrito en el text field anterior." />
+         </tooltip>
+      </Button>
+      <Button layoutX="24.0" layoutY="468.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="149.0" styleClass="blue-btn" stylesheets="@chatgpt.css" text="Reiniciar Chat">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="Reinicia el chat para empezar una conversación." />
+         </tooltip>
+      </Button>
+      <Button layoutX="24.0" layoutY="530.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="149.0" styleClass="red-btn" stylesheets="@chatgpt.css" text="Cerrar Chat" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="Cerrar el chat, cierra la ventana y finaliza la conversación." />
+         </tooltip>
       </Button>
       <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="200.0" prefHeight="570.0" prefWidth="600.0">
         <content>
@@ -46,15 +69,5 @@
             <Font size="70.0" />
          </font>
       </Label>
-      <Button layoutX="24.0" layoutY="468.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="149.0" styleClass="blue-btn" stylesheets="@chatgpt.css" text="Reiniciar Chat">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="24.0" layoutY="530.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="149.0" styleClass="red-btn" stylesheets="@chatgpt.css" text="Cerrar Chat" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>
