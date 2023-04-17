@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -37,6 +38,9 @@
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
+                     <tooltip>
+                        <Tooltip text="Calendario" />
+                     </tooltip>
                   </JFXButton>
                   <JFXButton fx:id="navegadorBtn" buttonType="RAISED" onAction="#iniciarNavegador" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazalumno.css" text="Navegador">
                      <font>
@@ -45,6 +49,9 @@
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
+                     <tooltip>
+                        <Tooltip text="Navegador Web" />
+                     </tooltip>
                   </JFXButton>
                   <JFXButton fx:id="comprimirBtn" buttonType="RAISED" onAction="#iniciarZip" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazalumno.css" text="Comprimir">
                      <font>
@@ -53,6 +60,9 @@
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
+                     <tooltip>
+                        <Tooltip text="Herramienta de compresión" />
+                     </tooltip>
                   </JFXButton>
                   <JFXButton fx:id="glosarioBtn" buttonType="RAISED" layoutX="209.0" layoutY="21.0" onAction="#iniciarZip" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazalumno.css" text="Glosario">
                      <font>
@@ -61,6 +71,9 @@
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
+                     <tooltip>
+                        <Tooltip text="Glosario de terminos" />
+                     </tooltip>
                   </JFXButton>
                   <JFXButton fx:id="soporteBtn" buttonType="RAISED" onAction="#iniciarSoporte" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazalumno.css" text="Soporte">
                      <font>
@@ -69,6 +82,9 @@
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
+                     <tooltip>
+                        <Tooltip text="Soporte" />
+                     </tooltip>
                   </JFXButton>
                </children>
             </HBox>
@@ -123,6 +139,9 @@
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
+                     <tooltip>
+                        <Tooltip text="Desarrollo de Interfaces" />
+                     </tooltip>
                   </JFXButton>
                   <JFXButton fx:id="sgiBtn" buttonType="RAISED" prefHeight="50.0" prefWidth="175.0" text=" SGE     " textFill="WHITE">
                      <font>
@@ -135,6 +154,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <tooltip>
+                        <Tooltip text="Sistemas de Gestión Empresarial" />
+                     </tooltip>
                   </JFXButton>
                   <JFXButton fx:id="hlcBtn" buttonType="RAISED" prefHeight="50.0" prefWidth="175.0" text=" HLC    " textFill="WHITE">
                      <font>
@@ -147,6 +169,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <tooltip>
+                        <Tooltip text="Horas de Libre Configuración" />
+                     </tooltip>
                   </JFXButton>
                   <JFXButton fx:id="pmmBtn" buttonType="RAISED" prefHeight="50.0" prefWidth="175.0" text=" PMM  " textFill="WHITE">
                      <font>
@@ -159,6 +184,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <tooltip>
+                        <Tooltip text="Programación de dispositivos Móviles y Multimedia" />
+                     </tooltip>
                   </JFXButton>
                   <JFXButton fx:id="pspBtn" buttonType="RAISED" prefHeight="50.0" prefWidth="175.0" text=" PSP     " textFill="WHITE">
                      <font>
@@ -171,6 +199,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <tooltip>
+                        <Tooltip text="Programación de Servicios y Procesos" />
+                     </tooltip>
                   </JFXButton>
                   <JFXButton fx:id="adBtn" buttonType="RAISED" prefHeight="50.0" prefWidth="175.0" text=" AD      " textFill="WHITE">
                      <font>
@@ -183,6 +214,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <tooltip>
+                        <Tooltip text="Acceso al Dato" />
+                     </tooltip>
                   </JFXButton>
                   <JFXButton fx:id="empBtn" buttonType="RAISED" prefHeight="50.0" prefWidth="175.0" text=" EMP    " textFill="WHITE">
                      <font>
@@ -198,6 +232,9 @@
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
+                     <tooltip>
+                        <Tooltip text="Empresas" />
+                     </tooltip>
                   </JFXButton>
                   <Label layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="175.0" text="     DESCARGAS" textAlignment="CENTER" textFill="WHITE">
                      <font>
@@ -222,6 +259,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <tooltip>
+                        <Tooltip text="PDFS locales" />
+                     </tooltip>
                   </JFXButton>
                   <JFXButton fx:id="pdfBtn1" buttonType="RAISED" layoutX="10.0" layoutY="565.0" onAction="#iniciarGPT" prefHeight="50.0" prefWidth="175.0" text=" GPT    " textFill="WHITE">
                      <font>
@@ -234,6 +274,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <tooltip>
+                        <Tooltip text="ChatGPT" />
+                     </tooltip>
                   </JFXButton>
                </children>
             </VBox>
@@ -253,11 +296,17 @@
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
+                     <tooltip>
+                        <Tooltip text="About" />
+                     </tooltip>
                   </JFXButton>
                   <Button fx:id="cerrarSesionBtn" mnemonicParsing="false" prefHeight="45.0" prefWidth="160.0" styleClass="red-btn" stylesheets="@interfazalumno.css" text="Cerrar Sesión">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
+                     <tooltip>
+                        <Tooltip text="Cerrar Sesión" />
+                     </tooltip>
                   </Button>
                </children>
             </VBox>

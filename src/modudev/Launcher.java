@@ -22,6 +22,7 @@ public class Launcher extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
+
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SplashScreen.fxml")));
         Scene scene = new Scene(root);
         
@@ -41,6 +42,7 @@ public class Launcher extends Application {
         stage.setScene(scene);
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
+
     }
 
     /**

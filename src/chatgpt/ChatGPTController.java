@@ -37,6 +37,7 @@ public class ChatGPTController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        chat.setWrapText(true);
         chat.setEditable(false);
         chat.appendText("ChatGPT: " + "Hola soy una integración de ChatGPT creada por Guillermo Julián Gallego González, estoy aquí\n" + "para resover tus dudas. ¿Qué duda quieres que te resuelva?." + "\n");
     }

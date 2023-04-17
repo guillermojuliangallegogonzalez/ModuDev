@@ -39,6 +39,7 @@ public class SignUpController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         //Carga función Salir
         MetodosComunes.salirBtn(crearSalirBtn);
+
     }    
     
 }
