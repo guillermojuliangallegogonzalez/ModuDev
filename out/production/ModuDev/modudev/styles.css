@@ -22,9 +22,11 @@
     -fx-background-color: transparent;
     -fx-border-color: #DEDEE4;
     -fx-border-width: 0px 0px 1px 0px;
+    -fx-text-fill: #ffffff;
 }
 .tf{
-    -fx-background-color: transparent;    
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
 }
 .red-btn{
     -fx-background-color: #FC0137;

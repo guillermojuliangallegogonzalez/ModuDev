@@ -37,9 +37,12 @@ public class SignUpController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //Carga función Salir
+        //Cargamos las restricciones
         MetodosComunes.salirBtn(crearSalirBtn);
-
+        MetodosComunes.dniPattern(dniTF);
+        MetodosComunes.restringirEspacios(emailTF);
+        MetodosComunes.restringirEspacios(nombreTF);
+        MetodosComunes.restringirEspacios(apellidosTF);
     }    
     
 }
