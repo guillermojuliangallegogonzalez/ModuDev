@@ -14,7 +14,7 @@ public class Conectar {
 
     public Conectar() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(url, login, password);
             if (connection != null) {
                 System.out.println("Conexión a base de datos " + bd + " OK\n");

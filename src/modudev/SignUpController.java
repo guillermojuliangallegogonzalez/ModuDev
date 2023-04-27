@@ -5,7 +5,9 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import metodos.DarDeAlta;
 import metodos.MetodosComunes;
 
 /**
@@ -24,9 +26,9 @@ public class SignUpController implements Initializable {
     @FXML
     private TextField emailTF;
     @FXML
-    private TextField contraseñaTF;
+    private PasswordField contraseñaTF;
     @FXML
-    private TextField contraseñaRepetidaTF;
+    private PasswordField contraseñaRepetidaTF;
     @FXML
     private Button crearCuentaBtn;
     @FXML
@@ -43,6 +45,10 @@ public class SignUpController implements Initializable {
         MetodosComunes.restringirEspacios(emailTF);
         MetodosComunes.restringirEspacios(nombreTF);
         MetodosComunes.restringirEspacios(apellidosTF);
-    }    
+    }
+    @FXML
+    public void insertarCuenta(){
+        DarDeAlta.crearCuenta(nombreTF,apellidosTF,dniTF,emailTF,contraseñaTF,contraseñaRepetidaTF);
+    }
     
 }

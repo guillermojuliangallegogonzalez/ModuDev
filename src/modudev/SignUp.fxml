@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -90,39 +91,42 @@
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="276.0" prefHeight="40.0" prefWidth="200.0">
          <children>
-            <TextField fx:id="contraseñaTF" promptText="Contraseña" styleClass="tf_box" HBox.hgrow="ALWAYS">
+            <JFXPasswordField fx:id="contraseñaTF" prefHeight="26.0" prefWidth="434.0" promptText="Introduzca la contraseña" styleClass="tf_box">
                <HBox.margin>
-                  <Insets left="16.0" top="15.0" />
+                  <Insets left="16.0" top="10.0" />
                </HBox.margin>
-               <tooltip>
-                  <Tooltip text="Contraseña" />
-               </tooltip>
-            </TextField>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXPasswordField>
             <FontAwesomeIconView fill="WHITE" glyphName="LOCK" size="1.3em">
                <HBox.margin>
-                  <Insets right="15.0" top="15.0" />
+                  <Insets right="15.0" top="10.0" />
                </HBox.margin>
             </FontAwesomeIconView>
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="297.0" prefHeight="40.0" prefWidth="200.0">
          <children>
-            <TextField fx:id="contraseñaRepetidaTF" promptText="Repita la Contraseña" styleClass="tf_box" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets left="16.0" top="15.0" />
-               </HBox.margin>
+            <JFXPasswordField fx:id="contraseñaRepetidaTF" prefHeight="26.0" prefWidth="434.0" promptText="Repita la contraseña" styleClass="tf_box" stylesheets="@styles.css">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
                <tooltip>
                   <Tooltip text="Repita la contraseña" />
                </tooltip>
-            </TextField>
+               <HBox.margin>
+                  <Insets left="16.0" top="10.0" />
+               </HBox.margin>
+            </JFXPasswordField>
             <FontAwesomeIconView fill="WHITE" glyphName="LOCK" size="1.3em">
                <HBox.margin>
-                  <Insets right="15.0" top="15.0" />
+                  <Insets right="15.0" top="10.0" />
                </HBox.margin>
             </FontAwesomeIconView>
          </children>
       </HBox>
-      <Button fx:id="crearCuentaBtn" mnemonicParsing="false" prefHeight="38.0" prefWidth="456.0" styleClass="blue-btn" text="Crear Cuenta" textFill="WHITE">
+      <Button fx:id="crearCuentaBtn" mnemonicParsing="false" onAction="#insertarCuenta" prefHeight="38.0" prefWidth="456.0" styleClass="blue-btn" text="Crear Cuenta" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>

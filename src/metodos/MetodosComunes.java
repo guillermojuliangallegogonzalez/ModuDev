@@ -4,10 +4,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
@@ -95,11 +92,7 @@ public class MetodosComunes {
         String password1 = contraseña1.getText();
         String password2 = contraseña2.getText();
 
-        if (!password1.equals(password2)){
-            return false;
-        } else {
-            return true;
-        }
+        return password1.equals(password2);
 
     }
 
@@ -123,12 +116,18 @@ public class MetodosComunes {
 
         String contenido = campo.getText();
 
-        if(contenido.isEmpty()){
-            return true;
-        }else {
-            return false;
-        }
+        return contenido.isEmpty();
 
+    }
+
+    //Limpiar un textfield
+    public static void limpiarTF(TextField tf){
+        tf.clear();
+    }
+
+    //Limpiar passwordfield
+    public static void limpiarPWTF(PasswordField pas){
+        pas.clear();
     }
 
 }
