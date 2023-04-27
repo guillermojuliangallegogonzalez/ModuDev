@@ -46,15 +46,20 @@ public class SplashScreenAlumnoController implements Initializable {
 
         @Override
         public void run() {
+            Platform.runLater(() -> nombreUsuarioLabel.setText(usuarioCargado.getNombre()));
             try {
                 Thread.sleep(5000);
 
                 Platform.runLater(() -> {
                     Parent root = null;
-                    System.out.println(usuarioCargado.getApellido());
-                    nombreUsuarioLabel.setText(usuarioCargado.getNombre());
                     try {
-                        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/alumno/InterfazAlumno.fxml")));
+                        if (usuarioCargado.getEsalumno()) {
+                            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/alumno/InterfazAlumno.fxml")));
+                        } else if (usuarioCargado.getEsprofesor()) {
+                            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/profesor/InterfazProfesor.fxml")));
+                        }else{
+                            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/profesor/InterfazProfesor.fxml")));
+                        }
                     } catch (IOException ex) {
                         Logger.getLogger(SplashScreenAlumnoController.class.getName()).log(Level.SEVERE, null, ex);
                     }

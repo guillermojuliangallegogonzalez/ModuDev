@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -31,7 +32,7 @@
       </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
          <children>
-            <TextField fx:id="contraseñaTF" promptText="Contraseña" styleClass="tf_box" HBox.hgrow="ALWAYS" />
+            <JFXPasswordField fx:id="contraseñaTF" prefHeight="25.0" prefWidth="438.0" promptText="Contraseña" styleClass="tf_box" />
             <FontAwesomeIconView fill="WHITE" glyphName="LOCK" size="1.3em" />
          </children>
          <VBox.margin>
