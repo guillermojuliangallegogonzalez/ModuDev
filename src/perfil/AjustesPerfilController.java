@@ -33,8 +33,8 @@ public class AjustesPerfilController implements Initializable {
     private JFXTextField dniTF;
     @FXML
     private JFXTextField telefonoTF;
-    @FXML
-    private JFXComboBox<String> generoCB = (JFXComboBox<String>) FXCollections.observableArrayList("Hombre", "Mujer");;
+    //@FXML
+    //private JFXComboBox<String> generoCB = (JFXComboBox<String>) FXCollections.observableArrayList("Hombre", "Mujer");;
     @FXML
     private JFXDatePicker nacimientoDP;
     @FXML
@@ -48,10 +48,13 @@ public class AjustesPerfilController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        MetodosComunes.salirBtn(cancelarBtn);
+        MetodosComunes.cerrarBtn(cancelarBtn);
         Platform.runLater(() -> dniTF.setText(usuarioCargado.getDni()));
         Platform.runLater(() -> nombreTF.setText(usuarioCargado.getNombre()));
         Platform.runLater(() -> apellidosTF.setText(usuarioCargado.getApellido()));
+    }
+
+    public void actualizarPerfil(){
 
     }
 

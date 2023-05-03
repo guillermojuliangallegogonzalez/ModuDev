@@ -49,6 +49,20 @@ public class MetodosComunes {
 
     }
 
+    //Función mínima longitud
+    public static boolean minLength(TextField textField, TextField textField1) {
+        if (textField.getLength() < 8 || textField1.getLength() < 8){
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("Error Longitud Contraseña");
+            alerta.setHeaderText("Las contraseñas debe mayor longitud");
+            alerta.setContentText("Las contraseñas deben de tener un mínimo de 8 caracteres por su seguridad");
+            alerta.show();
+            return true;
+        }else {
+            return false;
+        }
+    }
+
     //Función calcular DNI automáticamente
     public static void dniPattern(TextField textField) {
 

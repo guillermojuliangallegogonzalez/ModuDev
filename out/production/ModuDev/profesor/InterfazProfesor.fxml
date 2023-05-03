@@ -127,7 +127,7 @@
                         <Separator opacity="0.81" prefWidth="200.0" />
                         <JFXButton fx:id="altaBtn" buttonType="RAISED" prefHeight="50.0" prefWidth="175.0" text=" ALTA    " textFill="WHITE">
                             <font>
-                                <Font size="30.0" />
+                                <Font size="28.0" />
                             </font>
                             <graphic>
                                 <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -145,7 +145,7 @@
                         </JFXButton>
                         <JFXButton fx:id="bajaBtn" buttonType="RAISED" prefHeight="50.0" prefWidth="175.0" text=" BAJA    " textFill="WHITE">
                             <font>
-                                <Font size="30.0" />
+                                <Font size="28.0" />
                             </font>
                             <graphic>
                                 <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -160,7 +160,7 @@
                         </JFXButton>
                         <JFXButton fx:id="subirpdfBtn" buttonType="RAISED" prefHeight="50.0" prefWidth="175.0" text=" SUBIR  " textFill="WHITE">
                             <font>
-                                <Font size="30.0" />
+                                <Font size="28.0" />
                             </font>
                             <graphic>
                                 <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">

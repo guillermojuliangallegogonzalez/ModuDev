@@ -78,6 +78,7 @@ public class SigInController implements Initializable {
             alert.setHeaderText("Error correo/contraseña");
             alert.setContentText("Compruebe que la contraseña y el correo electrónico proporcionado. Asegurese de tener cuenta en ModuDev, si el problema persiste contacte con el administrador");
             alert.show();
+            this.usuario = new alumno();
         }
     }
 
@@ -141,6 +142,7 @@ public class SigInController implements Initializable {
                 this.usuario.setEmp(result.getBoolean("emp"));
                 this.usuario.setSexo(result.getBoolean("sexo"));
                 this.usuario.setBiografia(result.getString("biografia"));
+                this.usuario.setTelefono(result.getInt("telefono"));
                 AlumnoHolder.setAlumno(this.usuario);
                 return this.usuario;
 

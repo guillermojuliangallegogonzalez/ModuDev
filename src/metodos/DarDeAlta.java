@@ -24,6 +24,9 @@ public class DarDeAlta {
             alert.setContentText("Por favor, comprueba los campos e introduzca los datos necesarios.");
             alert.showAndWait();
             return false;
+         //Comprobamos la longitud de las contraseñas
+        }else if(MetodosComunes.minLength(contraseñaTF,contraseñaRepetidaTF)){
+            return false;
         }else {
             //Validamos que las contraseñas sean iguales
             if (MetodosComunes.validarContraseñas(contraseñaTF, contraseñaRepetidaTF)) {
@@ -52,7 +55,7 @@ public class DarDeAlta {
                 connection = con.getConnection();
 
                 // Crea la consulta SQL
-                String query1 = "SELECT * FROM alumnos WHERE dni = ?";
+                String query1 = "SELECT * FROM alumnos WHERE dnialumnos = ?";
 
                 // Crea el objeto PreparedStatement y establece el valor del parámetro
                 PreparedStatement pstmt = connection.prepareStatement(query1);
@@ -67,7 +70,7 @@ public class DarDeAlta {
                 }
 
                 if(!existe) {
-                    String query = "INSERT INTO alumnos (dnialumnos, nombre, apellido, correo, contraseña, esalumno, esprofesor, esadmin, di, sge, hlc, pmm, psp, ad, emp, sexo, biografia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    String query = "INSERT INTO alumnos (dnialumnos, nombre, apellido, correo, contraseña, esalumno, esprofesor, esadmin, di, sge, hlc, pmm, psp, ad, emp, sexo, biografia, telefono) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                     preparedStatement = connection.prepareStatement(query);
 
                     preparedStatement.setString(1, dniTF.getText());
@@ -87,6 +90,7 @@ public class DarDeAlta {
                     preparedStatement.setBoolean(15, false);
                     preparedStatement.setBoolean(16, false);
                     preparedStatement.setString(17, "");
+                    preparedStatement.setInt(18,0);
 
                     preparedStatement.executeUpdate();
                 }else{

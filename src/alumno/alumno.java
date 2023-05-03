@@ -23,6 +23,7 @@ public class alumno {
     Boolean emp;
     Boolean sexo;
     String biografia;
+    int telefono;
 
     public alumno(){
     }
@@ -59,6 +60,7 @@ public class alumno {
     public Boolean getSexo() {return sexo;}
 
     public String getBiografia() {return biografia;}
+    public int getTelefono() {return  telefono;}
 
     //Getters
     public void setDni(String dni) {this.dni = dni;}
@@ -93,6 +95,7 @@ public class alumno {
     public void setBiografia(String biografia) {this.biografia = biografia;}
 
     public void setSexo(Boolean sexo) {this.sexo = sexo;}
+    public void setTelefono(int telefono) {this.telefono = telefono;}
 
 
 }
