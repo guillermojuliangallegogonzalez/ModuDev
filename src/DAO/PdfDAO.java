@@ -1,5 +1,9 @@
 package DAO;
 
+import alumno.alumno;
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import metodos.AlumnoHolder;
+import modudev.SigInController;
 import sql.Conectar;
 import VO.PdfVO;
 import java.io.ByteArrayInputStream;
@@ -14,10 +18,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class PdfDAO {
+public class PdfDAO extends RecursiveTreeObject<PdfDAO> {
 
+    alumno usuario = new alumno();
+    SigInController controller;
     /*Metodo listar*/
     public ArrayList<PdfVO> Listar_PdfVO() {
+
+        usuario = controller.obtenerAlumno();
+
         ArrayList<PdfVO> list = new ArrayList<PdfVO>();
         Conectar conec = new Conectar();
         String sql = "SELECT * FROM pdf;";
@@ -31,7 +40,6 @@ public class PdfDAO {
                 vo.setCodigopdf(rs.getInt(1));
                 vo.setNombrepdf(rs.getString(2));
                 vo.setArchivopdf(rs.getBytes(3));
-                vo.setAsignaturapdf(rs.getString(4));
                 list.add(vo);
             }
         } catch (SQLException ex) {
@@ -53,14 +61,13 @@ public class PdfDAO {
     /*Metodo agregar*/
     public void Agregar_PdfVO(PdfVO vo) {
         Conectar conec = new Conectar();
-        String sql = "INSERT INTO pdf (codigopdf, nombrepdf, archivopdf, asignaturapdf) VALUES(?, ?, ?, ?);";
+        String sql = "INSERT INTO pdf (codigopdf, nombrepdf, archivopdf) VALUES(?, ?, ?);";
         PreparedStatement ps = null;
         try {
             ps = conec.getConnection().prepareStatement(sql);
             ps.setInt(1, vo.getCodigopdf());
             ps.setString(2, vo.getNombrepdf());
             ps.setBytes(3, vo.getArchivopdf());
-            ps.setString(4, vo.getAsignaturapdf());
             ps.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -79,14 +86,13 @@ public class PdfDAO {
     /*Metodo Modificar*/
     public void Modificar_PdfVO(PdfVO vo) {
         Conectar conec = new Conectar();
-        String sql = "UPDATE pdf SET nombrepdf = ?, archivopdf = ?, asignaturapdf = ?  WHERE codigopdf = ?;";
+        String sql = "UPDATE pdf SET nombrepdf = ?, archivopdf = ?  WHERE codigopdf = ?;";
         PreparedStatement ps = null;
         try {
             ps = conec.getConnection().prepareStatement(sql);
             ps.setString(1, vo.getNombrepdf());
             ps.setBytes(2, vo.getArchivopdf());
             ps.setInt(3, vo.getCodigopdf());
-            ps.setString(4, vo.getAsignaturapdf());
             ps.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

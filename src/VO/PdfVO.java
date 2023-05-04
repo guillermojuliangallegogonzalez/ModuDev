@@ -1,12 +1,20 @@
 package VO;
 
-public class PdfVO {
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+
+public class PdfVO extends RecursiveTreeObject<PdfVO> {
 
     /*Todo los atributos*/
     int codigopdf;
     String nombrepdf;
     byte[] archivopdf;
-    String asignaturapdf;
+    boolean di;
+    boolean sge;
+    boolean hlc;
+    boolean pmm;
+    boolean psp;
+    boolean ad;
+    boolean emp;
 
     public PdfVO() {
     }
@@ -24,10 +32,19 @@ public class PdfVO {
         return archivopdf;
     }
 
-    public String getAsignaturapdf(){
-        return asignaturapdf;
-    }
+    public boolean getDi(){return di;}
 
+    public boolean getSge() {return sge;}
+
+    public boolean getHlc() {return hlc;}
+
+    public boolean getPmm() {return pmm;}
+
+    public boolean getPsp() {return psp;}
+
+    public boolean getAd() {return ad;}
+
+    public boolean getEmp() {return emp;}
 
     /*Todo los codigos set*/
     public void setCodigopdf(int codigopdf) {
@@ -41,10 +58,13 @@ public class PdfVO {
     public void setArchivopdf(byte[] archivopdf) {
         this.archivopdf = archivopdf;
     }
-
-    public void setAsignaturapdf(String asignaturapdf){
-        this.asignaturapdf = asignaturapdf;
-    }
+    public void setDi(boolean di){this.di = di;}
+    public void setSge(boolean sge){this.sge = sge;}
+    public void setHlc(boolean hlc){this.hlc = hlc;}
+    public void setPmm(boolean pmm){this.pmm = pmm;}
+    public void setPsp(boolean psp){this.psp = psp;}
+    public void setAd(boolean ad){this.ad = ad;}
+    public void setEmp(boolean emp){this.emp = pmm;}
 
 }
 

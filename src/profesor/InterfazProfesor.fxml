@@ -224,7 +224,7 @@
                                 <Font size="30.0" />
                             </font>
                             <graphic>
-                                <ImageView fitHeight="37.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="37.0" fitWidth="54.0" onMouseClicked="#iniciarAbout" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../recursos/information.png" />
                                     </image>

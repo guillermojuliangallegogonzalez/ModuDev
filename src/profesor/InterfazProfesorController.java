@@ -195,4 +195,9 @@ public class InterfazProfesorController implements Initializable {
         }
     }
 
+    @FXML
+    private void OnActionButtonSubirPDF(){
+        
+    }
+
 }
