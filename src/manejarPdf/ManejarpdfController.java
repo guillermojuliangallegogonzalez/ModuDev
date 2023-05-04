@@ -199,6 +199,7 @@ public class ManejarpdfController implements Initializable {
                 } else {
                     PdfDAO pd = new PdfDAO();
                     pd.ejecutar_archivoPDF(id);
+                    System.out.println("hola");
                     try {
                         Desktop.getDesktop().open(new File("new.pdf"));
                     } catch (Exception ex) {
