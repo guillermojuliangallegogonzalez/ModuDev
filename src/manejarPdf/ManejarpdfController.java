@@ -174,7 +174,7 @@ public class ManejarpdfController implements Initializable {
     }
 
     @FXML
-    public void accionClick(MouseEvent evt) {
+    public void accionClick() {
         int column = vistaPDF.getSelectionModel().getSelectedCells().get(0).getColumn();
         int row = vistaPDF.getSelectionModel().getSelectedCells().get(0).getRow();
         activarBotones(true, false, false);
@@ -185,7 +185,7 @@ public class ManejarpdfController implements Initializable {
             TreeTableColumn<PdfVO, ?> col = vistaPDF.getColumns().get(column);
             ObservableValue<?> obsVal = col.getCellObservableValue(row);
             Object value = obsVal.getValue();
-
+            System.out.println(id);
             if (value instanceof Button) {
                 ((Button) value).fire();
                 Button boton = (Button) value;
