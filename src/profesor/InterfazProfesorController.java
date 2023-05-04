@@ -28,6 +28,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -77,7 +78,8 @@ public class InterfazProfesorController implements Initializable {
     private Button cerrarSesionBtn;
     @FXML
     private BorderPane modudevInterfaz;
-
+    @FXML
+    private AnchorPane profesorAnchorPane;
     /**
      * Initializes the controller class.
      */
@@ -196,8 +198,15 @@ public class InterfazProfesorController implements Initializable {
     }
 
     @FXML
-    private void OnActionButtonSubirPDF(){
-        
+    private void OnActionButtonSubirPDF() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/manejarPdf/manejarpdf.fxml"));
+        AnchorPane pdfAnchorPane = (AnchorPane) fxmlLoader.load();
+        try {
+            profesorAnchorPane.getChildren().clear();
+            profesorAnchorPane.getChildren().add(pdfAnchorPane);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

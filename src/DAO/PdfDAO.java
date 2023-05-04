@@ -25,7 +25,7 @@ public class PdfDAO extends RecursiveTreeObject<PdfDAO> {
     /*Metodo listar*/
     public ArrayList<PdfVO> Listar_PdfVO() {
 
-        usuario = controller.obtenerAlumno();
+        //usuario = controller.obtenerAlumno();
 
         ArrayList<PdfVO> list = new ArrayList<PdfVO>();
         Conectar conec = new Conectar();

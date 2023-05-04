@@ -8,6 +8,7 @@
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -158,7 +159,7 @@
                         <Tooltip text="Dar de baja a un alumno" />
                      </tooltip>
                         </JFXButton>
-                        <JFXButton fx:id="subirpdfBtn" buttonType="RAISED" prefHeight="50.0" prefWidth="175.0" text=" SUBIR  " textFill="WHITE">
+                        <JFXButton fx:id="subirpdfBtn" buttonType="RAISED" onAction="#OnActionButtonSubirPDF" prefHeight="50.0" prefWidth="175.0" text=" SUBIR  " textFill="WHITE">
                             <font>
                                 <Font size="28.0" />
                             </font>
@@ -224,7 +225,7 @@
                                 <Font size="30.0" />
                             </font>
                             <graphic>
-                                <ImageView fitHeight="37.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="37.0" fitWidth="54.0" onMouseClicked="#iniciarAbout" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../recursos/information.png" />
                                     </image>
@@ -251,12 +252,16 @@
     </left>
     <center>
         <BorderPane fx:id="modudevInterfaz" prefHeight="850.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <center>
-                <ImageView fitHeight="271.0" fitWidth="1126.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-                    <image>
-                        <Image url="@../recursos/zyro-image.png" />
-                    </image>
-                </ImageView>
-            </center></BorderPane>
+         <center>
+            <AnchorPane fx:id="profesorAnchorPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="269.0" fitWidth="976.0" layoutX="225.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../recursos/ModuDev_Negro_Horizontal.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </center></BorderPane>
     </center>
 </BorderPane>
