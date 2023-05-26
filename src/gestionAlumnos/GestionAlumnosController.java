@@ -27,11 +27,9 @@ public class GestionAlumnosController implements Initializable {
     @FXML
     private TextField buscarUsuario;
     @FXML
-    private JFXButton nuevoBtn;
+    private JFXButton bajaBtn;
     @FXML
-    private JFXButton eliminarBtn;
-    @FXML
-    private JFXButton modificarBtn;
+    private JFXButton altaBtn;
     @FXML
     private JFXButton guardarBtn;
     @FXML
