@@ -185,7 +185,6 @@ public class ManejarpdfController implements Initializable {
             TreeTableColumn<PdfVO, ?> col = vistaPDF.getColumns().get(column);
             ObservableValue<?> obsVal = col.getCellObservableValue(row);
             Object value = obsVal.getValue();
-            System.out.println(id);
             if (value instanceof Button) {
                 ((Button) value).fire();
                 Button boton = (Button) value;

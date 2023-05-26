@@ -1,11 +1,13 @@
 package alumno;
 
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import sql.Conectar;
 
 import java.sql.*;
 
-public class alumno {
+public class alumno extends RecursiveTreeObject<alumno> {
 
+    int idalumno;
     String dni;
     String nombre;
     String apellido;
@@ -29,6 +31,7 @@ public class alumno {
     }
 
     //Setters
+    public int getIdalumno(){return idalumno;}
     public String getDni() {return dni;}
     public String getNombre() {return nombre;}
 
@@ -63,6 +66,7 @@ public class alumno {
     public int getTelefono() {return  telefono;}
 
     //Getters
+    public void setIdalumno(int idalumno){this.idalumno = idalumno;}
     public void setDni(String dni) {this.dni = dni;}
     public void setNombre(String nombre){this.nombre = nombre;}
 
