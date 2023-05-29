@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import org.json.JSONObject;
 
+
 /**
  * FXML Controller class
  *
@@ -28,7 +29,7 @@ public class ChatGPTController implements Initializable {
     private Button enviarBtn;
     @FXML
     private TextArea chat;
-
+    
     /**
      * Initializes the controller class.
      *
@@ -37,6 +38,16 @@ public class ChatGPTController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        barraChat.setOnKeyPressed(event -> {
+            if(event.getCode() == KeyCode.ENTER){
+                try {
+                    enviarMensaje();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
         chat.setWrapText(true);
         chat.setEditable(false);
         chat.appendText("ChatGPT: " + "Hola soy una integración de ChatGPT creada por Guillermo Julián Gallego González, estoy aquí\n" + "para resover tus dudas. ¿Qué duda quieres que te resuelva?." + "\n");
@@ -81,6 +92,12 @@ public class ChatGPTController implements Initializable {
         mensaje = new JSONObject(output).getJSONArray("choices").getJSONObject(0).getString("text");
 
         return mensaje;
+    }
+
+    public void reiniciarChat(){
+        chat.setText("");
+        barraChat.setText("");
+        chat.appendText("ChatGPT: " + "Hola soy una integración de ChatGPT creada por Guillermo Julián Gallego González, estoy aquí\n" + "para resover tus dudas. ¿Qué duda quieres que te resuelva?." + "\n");
     }
 
 }

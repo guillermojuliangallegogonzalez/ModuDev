@@ -29,7 +29,7 @@
             <Tooltip text="Enviar el texto escrito en el text field anterior." />
          </tooltip>
       </Button>
-      <Button layoutX="24.0" layoutY="468.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="149.0" styleClass="blue-btn" stylesheets="@chatgpt.css" text="Reiniciar Chat">
+      <Button layoutX="24.0" layoutY="468.0" mnemonicParsing="false" onAction="#reiniciarChat" prefHeight="41.0" prefWidth="149.0" styleClass="blue-btn" stylesheets="@chatgpt.css" text="Reiniciar Chat">
          <font>
             <Font size="18.0" />
          </font>
