@@ -15,14 +15,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -49,6 +47,10 @@ public class ZipController implements Initializable {
     ObservableList<String> asignaturas = FXCollections.observableArrayList("DI", "SGE", "HLC", "PMM", "PSP", "AD", "EMP");
     @FXML
     private TextField temaTF;
+    @FXML
+    private Button cancelarBtn;
+    @FXML
+    private Button comprimirBtn;
 
     /**
      * Initializes the controller class.
@@ -56,6 +58,10 @@ public class ZipController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        cancelarBtn.setOnAction(event -> {
+            Stage stage = (Stage) cancelarBtn.getScene().getWindow();
+            stage.close();
+        });
         asignaturaCB.setItems(asignaturas);
         temaTF.textProperty().addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
             if (!newValue.matches("\\d*")) {
@@ -90,33 +96,32 @@ public class ZipController implements Initializable {
     //Función para añadir la ruta donde se va a guardar el zip
     @FXML
     public void añadirRuta() {
+        DirectoryChooser directoryChooser = new DirectoryChooser();
+        directoryChooser.setTitle("Seleccionar ruta salida");
+        File selectedDirectory = directoryChooser.showDialog(AnchorPane.getScene().getWindow());
 
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Seleccionar ruta salida");
-        this.ruta = fileChooser.showOpenDialog(AnchorPane.getScene().getWindow()).toString();
-
-        if (ruta != null) {
-
+        if (selectedDirectory != null) {
+            this.ruta = selectedDirectory.getAbsolutePath();
             rutaText.setText("Seleccionado");
             rutaText.setTextFill(Color.web("#62B988"));
-
         } else {
-
             rutaText.setText("No Seleccionado");
             rutaText.setTextFill(Color.web("#EA1F1B"));
-
         }
-
     }
 
     //Función para comprimir el zip
     @FXML
     public void comprimirZip() {
-
-        if (archivos != null) {
+        if (archivos != null && ruta != null) {
             try {
+                String asignatura = asignaturaCB.getValue().toString();
+                String tema = temaTF.getText();
+                String nombreArchivo = asignatura + "_" + "T" + tema + ".zip";
+                String rutaArchivo = ruta + File.separator + nombreArchivo;
+
                 // Crear el archivo ZIP
-                FileOutputStream fos = new FileOutputStream(asignaturaCB.getValue() + "_" + "T" + temaTF.getText() + ".zip");
+                FileOutputStream fos = new FileOutputStream(rutaArchivo);
                 ZipOutputStream zipOut = new ZipOutputStream(fos);
 
                 // Recorrer los archivos seleccionados y agregarlos al archivo ZIP
@@ -138,11 +143,18 @@ public class ZipController implements Initializable {
                 // Cerrar el archivo ZIP
                 zipOut.close();
                 fos.close();
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Archivo comprimido");
+                alert.setHeaderText("Archivo comprimido correctamente");
+                alert.setContentText("El archivo se ha comprimido correctamente en la ruta: " + rutaArchivo);
+                alert.show();
+
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
-
     }
+
 
 }

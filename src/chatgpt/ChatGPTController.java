@@ -13,6 +13,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
+import javafx.stage.Stage;
+import metodos.MetodosComunes;
 import org.json.JSONObject;
 
 
@@ -29,7 +31,8 @@ public class ChatGPTController implements Initializable {
     private Button enviarBtn;
     @FXML
     private TextArea chat;
-    
+    @FXML
+    private Button cerrarBtn;
     /**
      * Initializes the controller class.
      *
@@ -38,7 +41,10 @@ public class ChatGPTController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        cerrarBtn.setOnAction(event -> {
+            Stage stage = (Stage) cerrarBtn.getScene().getWindow();
+            stage.close();
+        });
         barraChat.setOnKeyPressed(event -> {
             if(event.getCode() == KeyCode.ENTER){
                 try {

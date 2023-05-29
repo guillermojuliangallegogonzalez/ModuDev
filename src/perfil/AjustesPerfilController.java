@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import metodos.AlumnoHolder;
 import metodos.MetodosComunes;
 
@@ -48,7 +49,10 @@ public class AjustesPerfilController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        MetodosComunes.cerrarBtn(cancelarBtn);
+        cancelarBtn.setOnAction(event -> {
+            Stage stage = (Stage) cancelarBtn.getScene().getWindow();
+            stage.close();
+        });
         Platform.runLater(() -> dniTF.setText(usuarioCargado.getDni()));
         Platform.runLater(() -> nombreTF.setText(usuarioCargado.getNombre()));
         Platform.runLater(() -> apellidosTF.setText(usuarioCargado.getApellido()));

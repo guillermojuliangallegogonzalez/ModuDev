@@ -31,7 +31,7 @@
             </HBox>
             <HBox fx:id="menuSuperior" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1420.0">
                <children>
-                  <JFXButton fx:id="calendarioBtn" buttonType="RAISED" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazalumno.css" text="Calendario">
+                  <JFXButton fx:id="calendarioBtn" buttonType="RAISED" onAction="#iniciarCalendario" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazalumno.css" text="Calendario">
                      <font>
                         <Font size="14.0" />
                      </font>

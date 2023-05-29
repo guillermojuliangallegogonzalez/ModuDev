@@ -128,6 +128,27 @@ public class InterfazAlumnoController implements Initializable {
 
     //Ejecutar Herramienta de Compresión
     @FXML
+    public void iniciarCalendario() throws IOException {
+
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/calendario/calendarioApp.fxml")));
+        } catch (IOException ex) {
+            Logger.getLogger(ZipController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+
+        stage.getIcons().add(new Image("/recursos/ModuDev.png"));
+        stage.setTitle("ModuDev - Calendario");
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
+    //Ejecutar Herramienta de Compresión
+    @FXML
     public void iniciarAbout() throws IOException {
 
         Parent root = null;
