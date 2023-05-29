@@ -64,7 +64,7 @@
                         <Tooltip text="Herramienta de compresión" />
                      </tooltip>
                   </JFXButton>
-                  <JFXButton fx:id="glosarioBtn" buttonType="RAISED" layoutX="209.0" layoutY="21.0" onAction="#iniciarZip" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazalumno.css" text="Glosario">
+                  <JFXButton fx:id="glosarioBtn" buttonType="RAISED" layoutX="209.0" layoutY="21.0" onAction="#iniciarGlosario" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazalumno.css" text="Glosario">
                      <font>
                         <Font size="14.0" />
                      </font>

@@ -197,6 +197,48 @@ public class InterfazProfesorController implements Initializable {
         }
     }
 
+    //Ejecutar Herramienta de Compresión
+    @FXML
+    public void iniciarCalendario() throws IOException {
+
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/calendario/calendarioApp.fxml")));
+        } catch (IOException ex) {
+            Logger.getLogger(ZipController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+
+        stage.getIcons().add(new Image("/recursos/ModuDev.png"));
+        stage.setTitle("ModuDev - Calendario");
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
+    //Ejecutar Herramienta de Compresión
+    @FXML
+    public void iniciarGlosario() throws IOException {
+
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/glosario/glosarioApp.fxml")));
+        } catch (IOException ex) {
+            Logger.getLogger(AboutController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+
+        stage.getIcons().add(new Image("/recursos/ModuDev.png"));
+        stage.setTitle("ModuDev - Glosario");
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
     @FXML
     private void OnActionButtonSubirPDF() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/manejarPdf/manejarpdf.fxml"));
