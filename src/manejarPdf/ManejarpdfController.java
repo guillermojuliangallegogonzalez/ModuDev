@@ -15,6 +15,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTreeTableView;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -155,6 +156,7 @@ public class ManejarpdfController implements Initializable {
             alerta.setHeaderText("Rellena todos los campos");
             alerta.setContentText("Rellena todos los campos necesarios para la correcta subida del pdf a la base de datos");
         }
+        updateTableData();
     }
 
     @FXML
@@ -171,6 +173,7 @@ public class ManejarpdfController implements Initializable {
         ruta_archivo = "";
         activarBotones(true, true, true);
         nombreArchivoBtn.setDisable(true);
+        updateTableData();
     }
 
     @FXML
@@ -220,6 +223,7 @@ public class ManejarpdfController implements Initializable {
         activarBotones(true, true, true);
         nombreArchivoBtn.setDisable(true);
         ruta_archivo = "";
+        updateTableData();
     }
 
     @FXML
@@ -227,6 +231,7 @@ public class ManejarpdfController implements Initializable {
         activarBotones(true,true,true);
         ruta_archivo = "";
         nombreArchivoBtn.setDisable(true);
+        updateTableData();
     }
 
     @FXML
@@ -234,6 +239,22 @@ public class ManejarpdfController implements Initializable {
         activarBotones(false,true,true);
         nombreArchivoBtn.setDisable(false);
         ruta_archivo = "";
+    }
+
+    private void updateTableData() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/manejarPdf/manejarpdf.fxml"));
+        AnchorPane pdfAnchorPane = null;
+        try {
+            pdfAnchorPane = (AnchorPane) fxmlLoader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            anchorPane.getChildren().clear();
+            anchorPane.getChildren().add(pdfAnchorPane);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -23,6 +23,9 @@ public class AlumnoDAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 alumno usuario = new alumno();
+                usuario.setDni(rs.getString(2));
+                usuario.setNombre(rs.getString(3));
+                usuario.setApellido(rs.getString(4));
                 usuario.setDi(rs.getBoolean(10));
                 usuario.setSge(rs.getBoolean(11));
                 usuario.setHlc(rs.getBoolean(12));
@@ -46,6 +49,300 @@ public class AlumnoDAO {
         }
         return list;
 
+    }
+
+    public void Alta_DI(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET di = 1 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Alta_SGE(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET sge = 1 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Alta_HLC(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET hlc = 1 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Alta_PMM(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET pmm = 1 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Alta_PSP(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET psp = 1 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Alta_AD(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET ad = 1 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Alta_EMP(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET emp = 1 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Baja_DI(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET di = 0 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Baja_SGE(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET sge = 0 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Baja_HLC(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET hlc = 0 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Baja_PMM(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET pmm = 0 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Baja_PSP(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET psp = 0 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Baja_AD(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET ad = 0 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Baja_EMP(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET emp = 0 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
     }
 
     public void Eliminar_Alumno(alumno vo) throws RuntimeException {

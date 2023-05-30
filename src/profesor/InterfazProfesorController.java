@@ -251,4 +251,16 @@ public class InterfazProfesorController implements Initializable {
         }
     }
 
+    @FXML
+    private void bajaAlumno() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestionAlumnos/gestionAlumnos.fxml"));
+        AnchorPane pdfAnchorPane = (AnchorPane) fxmlLoader.load();
+        try {
+            profesorAnchorPane.getChildren().clear();
+            profesorAnchorPane.getChildren().add(pdfAnchorPane);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

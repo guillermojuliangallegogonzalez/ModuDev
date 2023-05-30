@@ -32,7 +32,7 @@
                 </HBox>
                 <HBox fx:id="menuSuperior" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1420.0">
                     <children>
-                        <JFXButton fx:id="calendarioBtn" buttonType="RAISED" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazprofesor.css" text="Calendario">
+                        <JFXButton fx:id="calendarioBtn" buttonType="RAISED" onAction="#iniciarCalendario" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazprofesor.css" text="Calendario">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -65,7 +65,7 @@
                         <Tooltip text="Comprimir archivos" />
                      </tooltip>
                         </JFXButton>
-                        <JFXButton fx:id="glosarioBtn" buttonType="RAISED" layoutX="209.0" layoutY="21.0" onAction="#iniciarZip" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazprofesor.css" text="Glosario">
+                        <JFXButton fx:id="glosarioBtn" buttonType="RAISED" layoutX="209.0" layoutY="21.0" onAction="#iniciarGlosario" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazprofesor.css" text="Glosario">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -126,9 +126,9 @@
                             </VBox.margin>
                         </Label>
                         <Separator opacity="0.81" prefWidth="200.0" />
-                        <JFXButton fx:id="altaBtn" buttonType="RAISED" prefHeight="50.0" prefWidth="175.0" text=" ALTA    " textFill="WHITE">
+                        <JFXButton fx:id="altaBtn" buttonType="RAISED" onAction="#bajaAlumno" prefHeight="50.0" prefWidth="175.0" text=" ALUMNOS    " textFill="WHITE">
                             <font>
-                                <Font size="28.0" />
+                                <Font name="System Bold" size="17.0" />
                             </font>
                             <graphic>
                                 <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -142,21 +142,6 @@
                             </VBox.margin>
                      <tooltip>
                         <Tooltip text="Dar de alta a un alumno" />
-                     </tooltip>
-                        </JFXButton>
-                        <JFXButton fx:id="bajaBtn" buttonType="RAISED" prefHeight="50.0" prefWidth="175.0" text=" BAJA    " textFill="WHITE">
-                            <font>
-                                <Font size="28.0" />
-                            </font>
-                            <graphic>
-                                <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../recursos/baja.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                     <tooltip>
-                        <Tooltip text="Dar de baja a un alumno" />
                      </tooltip>
                         </JFXButton>
                         <JFXButton fx:id="subirpdfBtn" buttonType="RAISED" onAction="#OnActionButtonSubirPDF" prefHeight="50.0" prefWidth="175.0" text=" SUBIR  " textFill="WHITE">
@@ -186,7 +171,7 @@
                             </VBox.margin>
                         </Label>
                         <Separator layoutX="10.0" layoutY="60.0" opacity="0.81" prefWidth="200.0" />
-                        <JFXButton fx:id="pdfBtn" buttonType="RAISED" layoutX="10.0" layoutY="415.0" prefHeight="50.0" prefWidth="175.0" text=" PDF    " textFill="WHITE">
+                        <JFXButton fx:id="pdfBtn" buttonType="RAISED" layoutX="10.0" layoutY="415.0" onAction="#OnActionButtonSubirPDF" prefHeight="50.0" prefWidth="175.0" text=" PDF    " textFill="WHITE">
                             <font>
                                 <Font size="30.0" />
                             </font>

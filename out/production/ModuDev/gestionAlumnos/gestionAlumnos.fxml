@@ -14,7 +14,7 @@
         <URL value="@gestionalumnos.css" />
     </stylesheets>
     <children>
-        <Label layoutX="395.0" layoutY="22.0" text="Administrar Usuarios en la Base de Datos">
+        <Label layoutX="356.0" layoutY="21.0" text="Administrar Usuarios en la Base de Datos">
             <font>
                 <Font name="System Bold" size="37.0" />
             </font>
@@ -25,7 +25,7 @@
             </font>
         </Label>
         <TextField fx:id="buscarUsuario" layoutX="942.0" layoutY="103.0" prefHeight="27.0" prefWidth="424.0" />
-        <JFXTreeTableView fx:id="vistaAlumno" layoutX="66.0" layoutY="151.0" prefHeight="600.0" prefWidth="1300.0" />
+        <JFXTreeTableView fx:id="vistaAlumno" layoutX="66.0" layoutY="151.0" onMouseClicked="#accionClick" prefHeight="600.0" prefWidth="1300.0" />
         <JFXButton fx:id="altaBtn" buttonType="RAISED" layoutX="66.0" layoutY="780.0" prefHeight="50.0" prefWidth="100.0" ripplerFill="WHITE" styleClass="bottom_buttons" stylesheets="@gestionalumnos.css" text="Alta" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
