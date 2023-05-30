@@ -20,6 +20,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.layout.AnchorPane;
@@ -63,6 +64,7 @@ public class GestionAlumnosController implements Initializable {
             stage.close();
         });
         bajaAlumno();
+        altaAlumno();
     }    
 
     public void accionClick(){
@@ -92,16 +94,136 @@ public class GestionAlumnosController implements Initializable {
 
 
     void bajaAlumno(){
-
         if(usuarioCargado.getDi()){
             bajaBtn.setOnAction(event -> {
-                System.out.println(id);
                 AlumnoDAO alumnoDAO = new AlumnoDAO();
                 alumno vo = new alumno();
                 vo.setIdalumno(id);
                 alumnoDAO.Baja_DI(vo);
                 updateTableData();
             });
+        }else if(usuarioCargado.getSge()){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Baja_SGE(vo);
+                updateTableData();
+            });
+        }else if(usuarioCargado.getHlc()){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Baja_HLC(vo);
+                updateTableData();
+            });
+        }else if(usuarioCargado.getPmm()){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Baja_PMM(vo);
+                updateTableData();
+            });
+        }else if(usuarioCargado.getPsp()){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Baja_PSP(vo);
+                updateTableData();
+            });
+        }else if(usuarioCargado.getAd()){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Baja_AD(vo);
+                updateTableData();
+            });
+        }else if(usuarioCargado.getEmp()){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Baja_EMP(vo);
+                updateTableData();
+            });
+        }else {
+            bajaBtn.setDisable(true);
+            altaBtn.setDisable(true);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error baja");
+            alert.setContentText("No dispone de los permisos necesarios para dar de baja al alumno");
+            alert.show();
+        }
+    }
+
+    void altaAlumno(){
+        if(usuarioCargado.getDi()){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Alta_DI(vo);
+                updateTableData();
+            });
+        }else if(usuarioCargado.getSge()){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Alta_SGE(vo);
+                updateTableData();
+            });
+        }else if(usuarioCargado.getHlc()){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Alta_HLC(vo);
+                updateTableData();
+            });
+        }else if(usuarioCargado.getPmm()){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Alta_PMM(vo);
+                updateTableData();
+            });
+        }else if(usuarioCargado.getPsp()){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Alta_PSP(vo);
+                updateTableData();
+            });
+        }else if(usuarioCargado.getAd()){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Alta_AD(vo);
+                updateTableData();
+            });
+        }else if(usuarioCargado.getEmp()){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Alta_EMP(vo);
+                updateTableData();
+            });
+        }else {
+            bajaBtn.setDisable(true);
+            altaBtn.setDisable(true);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error alta");
+            alert.setContentText("No dispone de los permisos necesarios para dar de alta al alumno");
+            alert.show();
         }
     }
 

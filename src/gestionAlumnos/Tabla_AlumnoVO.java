@@ -50,37 +50,37 @@ public class Tabla_AlumnoVO {
         TreeTableColumn<alumno, Boolean> columnaSGE = new TreeTableColumn<>("sge");
         columnaSGE.setCellValueFactory(
                 (TreeTableColumn.CellDataFeatures<alumno, Boolean> param) ->
-                        new SimpleObjectProperty<>(param.getValue().getValue().getDi())
+                        new SimpleObjectProperty<>(param.getValue().getValue().getSge())
         );
 
         TreeTableColumn<alumno, Boolean> columnaHLC = new TreeTableColumn<>("hlc");
         columnaHLC.setCellValueFactory(
                 (TreeTableColumn.CellDataFeatures<alumno, Boolean> param) ->
-                        new SimpleObjectProperty<>(param.getValue().getValue().getDi())
+                        new SimpleObjectProperty<>(param.getValue().getValue().getHlc())
         );
 
         TreeTableColumn<alumno, Boolean> columnaPMM = new TreeTableColumn<>("pmm");
         columnaPMM.setCellValueFactory(
                 (TreeTableColumn.CellDataFeatures<alumno, Boolean> param) ->
-                        new SimpleObjectProperty<>(param.getValue().getValue().getDi())
+                        new SimpleObjectProperty<>(param.getValue().getValue().getPmm())
         );
 
         TreeTableColumn<alumno, Boolean> columnaPSP = new TreeTableColumn<>("psp");
         columnaPSP.setCellValueFactory(
                 (TreeTableColumn.CellDataFeatures<alumno, Boolean> param) ->
-                        new SimpleObjectProperty<>(param.getValue().getValue().getDi())
+                        new SimpleObjectProperty<>(param.getValue().getValue().getPsp())
         );
 
         TreeTableColumn<alumno, Boolean> columnaAD = new TreeTableColumn<>("ad");
         columnaAD.setCellValueFactory(
                 (TreeTableColumn.CellDataFeatures<alumno, Boolean> param) ->
-                        new SimpleObjectProperty<>(param.getValue().getValue().getDi())
+                        new SimpleObjectProperty<>(param.getValue().getValue().getAd())
         );
 
         TreeTableColumn<alumno, Boolean> columnaEMP = new TreeTableColumn<>("emp");
         columnaEMP.setCellValueFactory(
                 (TreeTableColumn.CellDataFeatures<alumno, Boolean> param) ->
-                        new SimpleObjectProperty<>(param.getValue().getValue().getDi())
+                        new SimpleObjectProperty<>(param.getValue().getValue().getEmp())
         );
 
         columnaDNI.setCellFactory(column -> {
