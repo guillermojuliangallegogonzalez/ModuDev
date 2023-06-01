@@ -8,6 +8,7 @@
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -208,7 +209,7 @@
                         <Font size="30.0" />
                      </font>
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="25.0" fitWidth="30.0" onDragDetected="#iniciarVisorPDF" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../recursos/ad.png" />
                            </image>
@@ -315,11 +316,15 @@
    <center>
       <BorderPane fx:id="modudevInterfaz" prefHeight="850.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <center>
-            <ImageView fitHeight="271.0" fitWidth="1126.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-               <image>
-                  <Image url="@../recursos/zyro-image.png" />
-               </image>
-            </ImageView>
+            <AnchorPane fx:id="profesorAnchorPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="269.0" fitWidth="976.0" layoutX="225.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../recursos/ModuDev_Negro_Horizontal.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
          </center></BorderPane>
    </center>
 </BorderPane>

@@ -17,20 +17,68 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Objects;
+
+import alumno.InterfazAlumnoController;
 
 public class PdfDAO extends RecursiveTreeObject<PdfDAO> {
 
     alumno usuario = new alumno();
+    private String asignatura;
     private alumno usuarioCargado = AlumnoHolder.getAlumno();
     SigInController controller;
     /*Metodo listar*/
-    public ArrayList<PdfVO> Listar_PdfVO() {
 
-        //usuario = controller.obtenerAlumno();
+    public String getAsignatura(){
+        Conectar conec = new Conectar();
+        String sql = "SELECT valorasignatura FROM alumnos WHERE dnialumnos = ?;";
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setString(1,usuarioCargado.getDni());
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                String asignatura = rs.getString(11);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                ps.close();
+                rs.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+            }
+        }
+        return asignatura;
+    }
+    
+    public ArrayList<PdfVO> Listar_PdfV1() {
 
+        String sql = "SELECT * FROM pdf;";
+
+        if (usuarioCargado.getDi() && usuarioCargado.getValorasignatura().equals("DI")) {
+            sql = "SELECT * FROM pdf WHERE di = 1;";
+        } else if (usuarioCargado.getSge() && getAsignatura().equals("SGE")) {
+            sql = "SELECT * FROM pdf WHERE sge = 1;";
+        } else if (usuarioCargado.getHlc() && getAsignatura().equals("HLC")) {
+            sql = "SELECT * FROM pdf WHERE hlc = 1;";
+        } else if (usuarioCargado.getPmm() && getAsignatura().equals("PMM")) {
+            sql = "SELECT * FROM pdf WHERE pmm = 1;";
+        } else if (usuarioCargado.getPsp() && getAsignatura().equals("PSP")) {
+            sql = "SELECT * FROM pdf WHERE psp = 1;";
+        } else if (usuarioCargado.getAd() && getAsignatura().equals("AD")) {
+            sql = "SELECT * FROM pdf WHERE ad = 1;";
+        } else if (usuarioCargado.getEmp() && getAsignatura().equals("EMP")) {
+            sql = "SELECT * FROM pdf WHERE emp = 1;";
+        }
         ArrayList<PdfVO> list = new ArrayList<PdfVO>();
         Conectar conec = new Conectar();
-        String sql = "SELECT * FROM pdf;";
+
+
         ResultSet rs = null;
         PreparedStatement ps = null;
         try {
@@ -58,6 +106,56 @@ public class PdfDAO extends RecursiveTreeObject<PdfDAO> {
         return list;
     }
 
+
+    public ArrayList<PdfVO> Listar_PdfVO() {
+
+        //usuario = controller.obtenerAlumno();
+
+        ArrayList<PdfVO> list = new ArrayList<PdfVO>();
+        Conectar conec = new Conectar();
+        String sql = "SELECT * FROM pdf;";
+        System.out.println(usuarioCargado.getDi());
+        if(usuarioCargado.getDi()){
+            sql = "SELECT * FROM pdf WHERE di = 1;";
+        } else if (usuarioCargado.getSge()) {
+            sql = "SELECT * FROM pdf WHERE sge = 1;";
+        }else if (usuarioCargado.getHlc()) {
+            sql = "SELECT * FROM pdf WHERE hlc = 1;";
+        }else if (usuarioCargado.getPmm()) {
+            sql = "SELECT * FROM pdf WHERE pmm = 1;";
+        }else if (usuarioCargado.getPsp()) {
+            sql = "SELECT * FROM pdf WHERE psp = 1;";
+        }else if (usuarioCargado.getAd()) {
+            sql = "SELECT * FROM pdf WHERE ad = 1;";
+        }else if (usuarioCargado.getEmp()) {
+            sql = "SELECT * FROM pdf WHERE emp = 1;";
+        }
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                PdfVO vo = new PdfVO();
+                vo.setCodigopdf(rs.getInt(1));
+                vo.setNombrepdf(rs.getString(2));
+                vo.setArchivopdf(rs.getBytes(3));
+                list.add(vo);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                ps.close();
+                rs.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+            }
+        }
+        return list;
+    }
 
     /*Metodo agregar*/
     public void Agregar_PdfVO(PdfVO vo) {

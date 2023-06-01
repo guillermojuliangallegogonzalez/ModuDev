@@ -26,6 +26,7 @@ public class alumno extends RecursiveTreeObject<alumno> {
     Boolean sexo;
     String biografia;
     int telefono;
+    String valorasignatura;
 
     public alumno(){
     }
@@ -64,6 +65,7 @@ public class alumno extends RecursiveTreeObject<alumno> {
 
     public String getBiografia() {return biografia;}
     public int getTelefono() {return  telefono;}
+    public String getValorasignatura() {return valorasignatura;}
 
     //Getters
     public void setIdalumno(int idalumno){this.idalumno = idalumno;}
@@ -100,6 +102,8 @@ public class alumno extends RecursiveTreeObject<alumno> {
 
     public void setSexo(Boolean sexo) {this.sexo = sexo;}
     public void setTelefono(int telefono) {this.telefono = telefono;}
+
+    public void setValorasignatura(String valorasignatura){this.valorasignatura = valorasignatura;}
 
 
 }

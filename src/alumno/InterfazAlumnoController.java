@@ -1,5 +1,6 @@
 package alumno;
 
+import DAO.PdfDAO;
 import about.AboutController;
 import chatgpt.ChatGPTController;
 import com.jfoenix.controls.JFXButton;
@@ -10,6 +11,8 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -22,11 +25,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import metodos.AlumnoHolder;
 import modudev.SplashScreenAlumnoController;
 import nomenglaturaZip.ZipController;
+import sql.Conectar;
 
 /**
  * FXML Controller class
@@ -37,6 +43,8 @@ public class InterfazAlumnoController implements Initializable {
 
     @FXML
     private ImageView logoModudev;
+    @FXML
+    private AnchorPane profesorAnchorPane;
     @FXML
     private ImageView perfilImg;
     @FXML
@@ -75,6 +83,9 @@ public class InterfazAlumnoController implements Initializable {
     private JFXButton aboutBtn;
     @FXML
     private Button cerrarSesionBtn;
+    public String valorAsignatura;
+    private alumno usuarioCargado = AlumnoHolder.getAlumno();
+
 
     /**
      * Initializes the controller class.
@@ -82,7 +93,79 @@ public class InterfazAlumnoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        diBtn.setOnAction(event -> {
+            try {
+                System.out.println(usuarioCargado.getDni());
+                Conectar conec = new Conectar();
+                String sen = usuarioCargado.getDni();
+                String sql = "UPDATE alumnos SET valorasignatura = ? WHERE dnialumnos = ?";
+                PreparedStatement ps = null;
+                try {
+                    ps = conec.getConnection().prepareStatement(sql);
+                    ps.setString(1, "DI");
+                    ps.setString(2, sen);
+                    ps.executeUpdate();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                } finally {
+                    try {
+                        ps.close();
+                        conec.desconectar();
+                    } catch (Exception ex) {
+                        System.out.println(ex.getMessage());
+                    }
+                }
+                iniciarVisorPDF();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        sgiBtn.setOnAction(event -> {
+            try {
+                iniciarVisorPDF();
+                this.valorAsignatura = "SGE";
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        hlcBtn.setOnAction(event -> {
+            try {
+                iniciarVisorPDF();
+                this.valorAsignatura = "HLC";
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        pspBtn.setOnAction(event -> {
+            try {
+                iniciarVisorPDF();
+                this.valorAsignatura = "PSP";
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        adBtn.setOnAction(event -> {
+            try {
+                iniciarVisorPDF();
+                this.valorAsignatura = "AD";
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        empBtn.setOnAction(event -> {
+            try {
+                iniciarVisorPDF();
+                this.valorAsignatura = "EMP";
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
+
+    public String getValorAsignatura(){return valorAsignatura;}
 
     //Ejecutar Ajustes perfil
     @FXML
@@ -200,6 +283,18 @@ public class InterfazAlumnoController implements Initializable {
     public void iniciarSoporte() throws URISyntaxException, IOException {
         Desktop desktop = getDesktop();
         desktop.mail(new URI("mailto:guillermojulian.gallegogonzalez@gmail.com"));
+    }
+
+    @FXML
+    private void iniciarVisorPDF() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/mostrarpdf/mostrarpdf.fxml"));
+        AnchorPane pdfAnchorPane = (AnchorPane) fxmlLoader.load();
+        try {
+            profesorAnchorPane.getChildren().clear();
+            profesorAnchorPane.getChildren().add(pdfAnchorPane);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //Ejecutar chatGPT

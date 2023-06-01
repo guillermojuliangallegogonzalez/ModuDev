@@ -59,10 +59,6 @@ public class GestionAlumnosController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         talum.visualizar_AlumnoVO(vistaAlumno);
-        cancelarBtn.setOnAction(event -> {
-            Stage stage = (Stage) cancelarBtn.getScene().getWindow();
-            stage.close();
-        });
         bajaAlumno();
         altaAlumno();
     }    
