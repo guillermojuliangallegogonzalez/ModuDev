@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTreeTableView?>
 <?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -40,5 +41,16 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </JFXButton>
+      <ComboBox fx:id="asignaturasCB" layoutX="66.0" layoutY="770.0" prefHeight="50.0" prefWidth="286.0" />
+      <JFXButton fx:id="altaBtn" buttonType="RAISED" layoutX="362.0" layoutY="770.0" prefHeight="50.0" prefWidth="100.0" ripplerFill="WHITE" styleClass="bottom_buttons" stylesheets="@gestionusuarios.css" text="Alta" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="bajaBtn" buttonType="RAISED" layoutX="478.0" layoutY="770.0" prefHeight="50.0" prefWidth="100.0" ripplerFill="WHITE" styleClass="bottom_buttons" stylesheets="@gestionusuarios.css" text="Baja" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
     </children>
 </AnchorPane>

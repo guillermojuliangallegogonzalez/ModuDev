@@ -12,9 +12,12 @@ import DAO.AlumnoDAO;
 import alumno.alumno;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTreeTableView;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import metodos.AlumnoHolder;
@@ -35,6 +38,13 @@ public class GestionUsuariosController implements Initializable {
     @FXML
     private JFXButton adminBtn;
     @FXML
+    private JFXButton bajaBtn;
+    @FXML
+    private JFXButton altaBtn;
+    @FXML
+    private ComboBox asignaturasCB;
+    ObservableList<String> asignaturas = FXCollections.observableArrayList("DI", "SGE", "HLC", "PMM", "PSP", "AD", "EMP");
+    @FXML
     private AnchorPane anchorPane;
     private alumno usuarioCargado = AlumnoHolder.getAlumno();
     Tabla_UsuariosVO tusu = new Tabla_UsuariosVO();
@@ -46,7 +56,16 @@ public class GestionUsuariosController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        asignaturasCB.setItems(asignaturas);
         tusu.visualizar_Usuario(vistaUsuario);
+        altaBtn.setOnAction(event -> {
+            altaAsignatura();
+            updateTableData();
+        });
+        bajaBtn.setOnAction(event -> {
+             bajaAsignatura();
+             updateTableData();
+        });
         alumnoBtn.setOnAction(event -> {
             altaAlumno();
             bajaAdmin();
@@ -135,6 +154,126 @@ public class GestionUsuariosController implements Initializable {
         vo.setIdalumno(id);
         alumnoDAO.Baja_ADMIN(vo);
         updateTableData();
+    }
+
+    void altaAsignatura(){
+        if(asignaturasCB.getValue() == "DI"){
+            altaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Alta_DI(vo);
+                updateTableData();
+            });
+        }else if(asignaturasCB.getValue() == "SGE"){
+            altaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Alta_SGE(vo);
+                updateTableData();
+            });
+        }else if(asignaturasCB.getValue() == "HLC"){
+            altaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Alta_HLC(vo);
+                updateTableData();
+            });
+        }else if(asignaturasCB.getValue() == "PMM"){
+            altaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Alta_PMM(vo);
+                updateTableData();
+            });
+        }else if(asignaturasCB.getValue() == "PSP"){
+            altaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Alta_PSP(vo);
+                updateTableData();
+            });
+        }else if(asignaturasCB.getValue() == "AD"){
+            altaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Alta_AD(vo);
+                updateTableData();
+            });
+        }else if(asignaturasCB.getValue() == "EMP"){
+            altaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Alta_EMP(vo);
+                updateTableData();
+            });
+        }
+    }
+
+    void bajaAsignatura(){
+        if(asignaturasCB.getValue() == "DI"){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Baja_DI(vo);
+                updateTableData();
+            });
+        }else if(asignaturasCB.getValue() == "SGE"){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Baja_SGE(vo);
+                updateTableData();
+            });
+        }else if(asignaturasCB.getValue() == "HLC"){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Baja_HLC(vo);
+                updateTableData();
+            });
+        }else if(asignaturasCB.getValue() == "PMM"){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Baja_PMM(vo);
+                updateTableData();
+            });
+        }else if(asignaturasCB.getValue() == "PSP"){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Baja_PSP(vo);
+                updateTableData();
+            });
+        }else if(asignaturasCB.getValue() == "AD"){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Baja_AD(vo);
+                updateTableData();
+            });
+        }else if(asignaturasCB.getValue() == "EMP"){
+            bajaBtn.setOnAction(event -> {
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                alumno vo = new alumno();
+                vo.setIdalumno(id);
+                alumnoDAO.Baja_EMP(vo);
+                updateTableData();
+            });
+        }
     }
 
 }
