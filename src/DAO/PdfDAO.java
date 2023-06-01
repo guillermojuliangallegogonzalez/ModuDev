@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class PdfDAO extends RecursiveTreeObject<PdfDAO> {
 
     alumno usuario = new alumno();
+    private alumno usuarioCargado = AlumnoHolder.getAlumno();
     SigInController controller;
     /*Metodo listar*/
     public ArrayList<PdfVO> Listar_PdfVO() {
@@ -61,13 +62,70 @@ public class PdfDAO extends RecursiveTreeObject<PdfDAO> {
     /*Metodo agregar*/
     public void Agregar_PdfVO(PdfVO vo) {
         Conectar conec = new Conectar();
-        String sql = "INSERT INTO pdf (codigopdf, nombrepdf, archivopdf) VALUES(?, ?, ?);";
+        String sql = "INSERT INTO pdf (codigopdf, nombrepdf, archivopdf,di,sge,hlc,pmm,psp,ad,emp) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
         PreparedStatement ps = null;
         try {
             ps = conec.getConnection().prepareStatement(sql);
             ps.setInt(1, vo.getCodigopdf());
             ps.setString(2, vo.getNombrepdf());
             ps.setBytes(3, vo.getArchivopdf());
+            if(usuarioCargado.getDi()){
+                ps.setInt(4,1);
+                ps.setInt(5,0);
+                ps.setInt(6,0);
+                ps.setInt(7,0);
+                ps.setInt(8,0);
+                ps.setInt(9,0);
+                ps.setInt(10,0);
+            }else if(usuarioCargado.getSge()){
+                ps.setInt(4,0);
+                ps.setInt(5,1);
+                ps.setInt(6,0);
+                ps.setInt(7,0);
+                ps.setInt(8,0);
+                ps.setInt(9,0);
+                ps.setInt(10,0);
+            }else if(usuarioCargado.getHlc()){
+                ps.setInt(4,0);
+                ps.setInt(5,0);
+                ps.setInt(6,1);
+                ps.setInt(7,0);
+                ps.setInt(8,0);
+                ps.setInt(9,0);
+                ps.setInt(10,0);
+            }else if(usuarioCargado.getPmm()){
+                ps.setInt(4,0);
+                ps.setInt(5,0);
+                ps.setInt(6,0);
+                ps.setInt(7,1);
+                ps.setInt(8,0);
+                ps.setInt(9,0);
+                ps.setInt(10,0);
+            }else if(usuarioCargado.getPsp()){
+                ps.setInt(4,0);
+                ps.setInt(5,0);
+                ps.setInt(6,0);
+                ps.setInt(7,0);
+                ps.setInt(8,1);
+                ps.setInt(9,0);
+                ps.setInt(10,0);
+            }else if(usuarioCargado.getAd()){
+                ps.setInt(4,0);
+                ps.setInt(5,0);
+                ps.setInt(6,0);
+                ps.setInt(7,0);
+                ps.setInt(8,0);
+                ps.setInt(9,1);
+                ps.setInt(10,0);
+            }else if(usuarioCargado.getEmp()){
+                ps.setInt(4,0);
+                ps.setInt(5,0);
+                ps.setInt(6,0);
+                ps.setInt(7,0);
+                ps.setInt(8,0);
+                ps.setInt(9,0);
+                ps.setInt(10,1);
+            }
             ps.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

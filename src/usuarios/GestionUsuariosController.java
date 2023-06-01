@@ -46,7 +46,6 @@ public class GestionUsuariosController implements Initializable {
     ObservableList<String> asignaturas = FXCollections.observableArrayList("DI", "SGE", "HLC", "PMM", "PSP", "AD", "EMP");
     @FXML
     private AnchorPane anchorPane;
-    private alumno usuarioCargado = AlumnoHolder.getAlumno();
     Tabla_UsuariosVO tusu = new Tabla_UsuariosVO();
     int id = -1;
 

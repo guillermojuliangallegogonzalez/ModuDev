@@ -150,7 +150,7 @@ public class GestionAlumnosController implements Initializable {
                 alumnoDAO.Baja_EMP(vo);
                 updateTableData();
             });
-        }else {
+        }else if (!usuarioCargado.getEsprofesor()){
             bajaBtn.setDisable(true);
             altaBtn.setDisable(true);
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -217,7 +217,7 @@ public class GestionAlumnosController implements Initializable {
                 alumnoDAO.Alta_EMP(vo);
                 updateTableData();
             });
-        }else {
+        }else if (!usuarioCargado.getEsprofesor()){
             bajaBtn.setDisable(true);
             altaBtn.setDisable(true);
             Alert alert = new Alert(Alert.AlertType.ERROR);
