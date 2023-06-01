@@ -1,0 +1,40 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+/*<--Modo Oscuro-->*/
+
+/*Menu Superior*/
+.interfaz-background-black{
+    -fx-background-color: #151928;
+}
+
+.combobox-barra-superior{
+    -fx-prompt-text-fill: #ffffff;
+    -jfx-unfocus-color: #ffffff;
+}
+
+.button-barra-superior{
+    -fx-background-color:#686868;
+    -fx-text-fill: white;
+
+}
+
+/*Menu Lateral*/
+.interfaz-menu-lateral{
+    -fx-background-color: #151928;
+}
+
+.texto-menu-alumno{
+    -fx-fill: white;
+}
+
+.config-menu-lateral{
+    -fx-fill: #3A4EF6;
+}
+
+.red-btn{
+    -fx-background-color: #FC0137;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #ffffff;
+}

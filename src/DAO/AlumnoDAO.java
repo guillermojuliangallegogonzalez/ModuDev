@@ -51,6 +51,175 @@ public class AlumnoDAO {
 
     }
 
+    public ArrayList<alumno> Listar_Usuarios(){
+
+        ArrayList<alumno> list = new ArrayList<alumno>();
+        Conectar conec = new Conectar();
+        String sql = "SELECT * FROM alumnos;";
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                alumno usuario = new alumno();
+                usuario.setDni(rs.getString(2));
+                usuario.setNombre(rs.getString(3));
+                usuario.setApellido(rs.getString(4));
+                usuario.setEsalumno(rs.getBoolean(7));
+                usuario.setEsprofesor(rs.getBoolean(8));
+                usuario.setEsadmin(rs.getBoolean(9));
+                usuario.setDi(rs.getBoolean(10));
+                usuario.setSge(rs.getBoolean(11));
+                usuario.setHlc(rs.getBoolean(12));
+                usuario.setPmm(rs.getBoolean(13));
+                usuario.setPsp(rs.getBoolean(14));
+                usuario.setAd(rs.getBoolean(15));
+                usuario.setEmp(rs.getBoolean(16));
+                list.add(usuario);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                assert rs != null;
+                rs.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+            }
+        }
+        return list;
+
+    }
+
+    public void Alta_ALUMNO(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET esalumno = 1 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Baja_ALUMNO(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET esalumno = 0 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Alta_PROFESOR(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET esprofesor = 1 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Baja_PROFESOR(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET esprofesor = 0 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Alta_ADMIN(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET esadmin = 1 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
+    public void Baja_ADMIN(alumno vo) throws RuntimeException {
+        Conectar conec = new Conectar();
+        String sql = "UPDATE alumnos SET esadmin = 0 WHERE idalumno = ?;";
+        PreparedStatement ps = null;
+        try {
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getIdalumno());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                assert ps != null;
+                ps.close();
+                conec.desconectar();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
+
     public void Alta_DI(alumno vo) throws RuntimeException {
         Conectar conec = new Conectar();
         String sql = "UPDATE alumnos SET di = 1 WHERE idalumno = ?;";

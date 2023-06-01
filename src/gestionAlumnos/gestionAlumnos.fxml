@@ -14,7 +14,7 @@
         <URL value="@gestionalumnos.css" />
     </stylesheets>
     <children>
-        <Label layoutX="356.0" layoutY="21.0" text="Administrar Usuarios en la Base de Datos">
+        <Label layoutX="356.0" layoutY="21.0" text="Administrar Alumnos en la Base de Datos">
             <font>
                 <Font name="System Bold" size="37.0" />
             </font>

@@ -58,7 +58,7 @@ public class SplashScreenAlumnoController implements Initializable {
                         } else if (usuarioCargado.getEsprofesor()) {
                             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/profesor/InterfazProfesor.fxml")));
                         }else{
-                            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/profesor/InterfazProfesor.fxml")));
+                            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/administrador/interfazAdministrador.fxml")));
                         }
                     } catch (IOException ex) {
                         Logger.getLogger(SplashScreenAlumnoController.class.getName()).log(Level.SEVERE, null, ex);

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="administrador.InterfazAdministradorController">
+    <top>
+        <HBox prefHeight="50.0" prefWidth="1600.0" styleClass="interfaz-background-black" stylesheets="@interfazAdministrador.css" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="50.0" prefWidth="177.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <ImageView fx:id="logoModudev" fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                            <image>
+                                <Image url="@../recursos/ModuDev_Blanco_Horizontal.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets left="15.0" top="6.0" />
+                            </HBox.margin>
+                        </ImageView>
+                    </children>
+                </HBox>
+                <HBox fx:id="menuSuperior" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1420.0">
+                    <children>
+                        <JFXButton fx:id="calendarioBtn" buttonType="RAISED" onAction="#iniciarCalendario" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazAdministrador.css" text="Calendario">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                            <tooltip>
+                                <Tooltip text="Calendario" />
+                            </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="navegadorBtn" buttonType="RAISED" onAction="#iniciarNavegador" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazAdministrador.css" text="Navegador">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                            <tooltip>
+                                <Tooltip text="Navegador Web" />
+                            </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="comprimirBtn" buttonType="RAISED" onAction="#iniciarZip" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazAdministrador.css" text="Comprimir">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                            <tooltip>
+                                <Tooltip text="Comprimir archivos" />
+                            </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="glosarioBtn" buttonType="RAISED" layoutX="209.0" layoutY="21.0" onAction="#iniciarGlosario" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazAdministrador.css" text="Glosario">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                            <tooltip>
+                                <Tooltip text="Glosario" />
+                            </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="soporteBtn" buttonType="RAISED" onAction="#iniciarSoporte" ripplerFill="WHITE" styleClass="button-barra-superior" stylesheets="@interfazAdministrador.css" text="Soporte">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                            <tooltip>
+                                <Tooltip text="Soporte" />
+                            </tooltip>
+                        </JFXButton>
+                    </children>
+                </HBox>
+                <HBox alignment="TOP_RIGHT" prefHeight="50.0" prefWidth="437.0">
+                    <children>
+                        <ImageView fx:id="perfilImg" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <HBox.margin>
+                                <Insets right="10.0" top="5.0" />
+                            </HBox.margin>
+                            <image>
+                                <Image url="@../recursos/ModuDev.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="ajustesImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#iniciarAjustes" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../recursos/ajustes.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets right="10.0" top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </top>
+    <left>
+        <VBox alignment="CENTER" prefHeight="850.0" prefWidth="175.0" styleClass="interfaz-menu-lateral" stylesheets="@interfazAdministrador.css" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefHeight="681.0" prefWidth="175.0">
+                    <children>
+                        <Label prefHeight="50.0" prefWidth="175.0" text="  HERRAMIENTAS" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Separator opacity="0.81" prefWidth="200.0" />
+                        <JFXButton fx:id="altaBtn" buttonType="RAISED" onAction="#gestionUsuarios" prefHeight="50.0" prefWidth="175.0" text=" USUARIOS  " textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="19.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../recursos/alta.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                            <tooltip>
+                                <Tooltip text="Dar de alta a un alumno" />
+                            </tooltip>
+                        </JFXButton>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="175.0" text="     DESCARGAS" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Separator layoutX="10.0" layoutY="60.0" opacity="0.81" prefWidth="200.0" />
+                        <JFXButton fx:id="pdfBtn" buttonType="RAISED" layoutX="10.0" layoutY="415.0" onAction="#OnActionButtonSubirPDF" prefHeight="50.0" prefWidth="175.0" text=" PDF    " textFill="WHITE">
+                            <font>
+                                <Font size="30.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../recursos/pdf.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <tooltip>
+                                <Tooltip text="Pdfs descargados" />
+                            </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="pdfBtn1" buttonType="RAISED" layoutX="10.0" layoutY="565.0" onAction="#iniciarGPT" prefHeight="50.0" prefWidth="175.0" text=" GPT    " textFill="WHITE">
+                            <font>
+                                <Font size="30.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../recursos/ChatGPT.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <tooltip>
+                                <Tooltip text="ChatGPT" />
+                            </tooltip>
+                        </JFXButton>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="111.0" prefWidth="175.0">
+                    <children>
+                        <JFXButton fx:id="aboutBtn" buttonType="RAISED" onAction="#iniciarAbout" prefHeight="50.0" prefWidth="175.0" text=" " textFill="WHITE">
+                            <font>
+                                <Font size="30.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="37.0" fitWidth="54.0" onMouseClicked="#iniciarAbout" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../recursos/information.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <tooltip>
+                                <Tooltip text="About" />
+                            </tooltip>
+                        </JFXButton>
+                        <Button fx:id="cerrarSesionBtn" mnemonicParsing="false" prefHeight="45.0" prefWidth="160.0" styleClass="red-btn" stylesheets="@interfazAdministrador.css" text="Cerrar Sesión">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                            <tooltip>
+                                <Tooltip text="Cerrar Sesión" />
+                            </tooltip>
+                        </Button>
+                    </children>
+                </VBox>
+            </children></VBox>
+    </left>
+    <center>
+        <BorderPane fx:id="modudevInterfaz" prefHeight="850.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <center>
+                <AnchorPane fx:id="profesorAnchorPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="269.0" fitWidth="976.0" layoutX="225.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../recursos/ModuDev_Negro_Horizontal.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+            </center></BorderPane>
+    </center>
+</BorderPane>
