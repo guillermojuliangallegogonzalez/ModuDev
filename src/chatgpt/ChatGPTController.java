@@ -2,6 +2,7 @@ package chatgpt;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import metodos.MetodosComunes;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 
@@ -41,6 +43,20 @@ public class ChatGPTController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        barraChat.setOnKeyPressed(event -> {
+            switch (event.getCode()) {
+                case ENTER:
+                    // Llamar a la función que deseas ejecutar
+                    try {
+                        enviarMensaje();
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        });
         cerrarBtn.setOnAction(event -> {
             Stage stage = (Stage) cerrarBtn.getScene().getWindow();
             stage.close();
@@ -75,29 +91,50 @@ public class ChatGPTController implements Initializable {
 
     // Método para obtener una respuesta del modelo de GPT-3.5 Turbo utilizando la API de OpenAI
     public static String chatGPT(String text) throws Exception {
-        String url = "https://api.openai.com/v1/completions";
+        String apiKey = "YOUR_API_KEY"; // Reemplaza con tu clave de API
+
+        String url = "https://api.openai.com/v1/engines/davinci/completions";
         HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
 
         con.setRequestMethod("POST");
         con.setRequestProperty("Content-Type", "application/json");
-        con.setRequestProperty("Authorization", "Bearer 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");
+        con.setRequestProperty("Authorization", "Bearer " + "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");
+
+        con.setDoOutput(true); // Habilitar la escritura
 
         JSONObject data = new JSONObject();
-        data.put("model", "text-davinci-003");
         data.put("prompt", text);
-        data.put("max_tokens", 4000);
-        data.put("temperature", 1.0);
+        data.put("max_tokens", 50);
+        data.put("temperature", 0.7);
 
-        con.setDoOutput(true);
-        con.getOutputStream().write(data.toString().getBytes());
+        // Esperar antes de realizar la solicitud
+        Thread.sleep(2000); // Pausa de 2 segundos
 
-        String output = new BufferedReader(new InputStreamReader(con.getInputStream())).lines()
-                .reduce((a, b) -> a + b).get();
+        try (OutputStream outputStream = con.getOutputStream()) {
+            outputStream.write(data.toString().getBytes());
+        }
 
-        String mensaje;
-        mensaje = new JSONObject(output).getJSONArray("choices").getJSONObject(0).getString("text");
+        int responseCode = con.getResponseCode();
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream()))) {
+                StringBuilder response = new StringBuilder();
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    response.append(line);
+                }
 
-        return mensaje;
+                JSONObject jsonResponse = new JSONObject(response.toString());
+                JSONArray choices = jsonResponse.getJSONArray("choices");
+                if (choices.length() > 0) {
+                    String mensaje = choices.getJSONObject(0).getString("text");
+                    return mensaje;
+                }
+            }
+        } else {
+            throw new RuntimeException("Error en la solicitud: Código de respuesta " + responseCode);
+        }
+
+        return null;
     }
 
     public void reiniciarChat(){

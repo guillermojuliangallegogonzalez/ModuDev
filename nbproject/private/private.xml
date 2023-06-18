@@ -4,9 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/gestionAlumnos/gestionAlumnos.fxml</file>
+            <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/pdflocal/pdflocal.fxml</file>
             <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/manejarPdf/ManejarpdfController.java</file>
             <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/usuarios/gestionUsuarios.fxml</file>
             <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/calendario/calendarioapp.css</file>
+            <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/pdflocal/PdflocalController.java</file>
             <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/gestionAlumnos/GestionAlumnosController.java</file>
             <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/glosario/glosarioApp.fxml</file>
             <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/glosario/GlosarioAppController.java</file>
@@ -15,6 +17,7 @@
             <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/administrador/interfazAdministrador.css</file>
             <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/calendario/CalendarioAppController.java</file>
             <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/calendario/calendarioApp.fxml</file>
+            <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/pdflocal/pdflocal.css</file>
             <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/glosario/glosarioapp.css</file>
             <file>file:/C:/Users/galle/OneDrive/Documentos/ModuDev/src/usuarios/gestionusuarios.css</file>
         </group>

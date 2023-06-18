@@ -57,7 +57,20 @@ public class SigInController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        contraseñaTF.setOnKeyPressed(event -> {
+            switch (event.getCode()) {
+                case ENTER:
+                    // Llamar a la función que deseas ejecutar
+                    try {
+                        iniciarSesion();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        });
         //Carga función Salir
         MetodosComunes.salirBtn(iniciarSalirBtn);
     }
