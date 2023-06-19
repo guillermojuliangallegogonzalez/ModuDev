@@ -249,7 +249,7 @@
                      </VBox.margin>
                   </Label>
                   <Separator layoutX="10.0" layoutY="60.0" opacity="0.81" prefWidth="200.0" />
-                  <JFXButton fx:id="pdfBtn" buttonType="RAISED" layoutX="10.0" layoutY="415.0" prefHeight="50.0" prefWidth="175.0" text=" PDF    " textFill="WHITE">
+                  <JFXButton fx:id="pdfBtn" buttonType="RAISED" layoutX="10.0" layoutY="415.0" onAction="#iniciarPDFLocal" prefHeight="50.0" prefWidth="175.0" text=" PDF    " textFill="WHITE">
                      <font>
                         <Font size="30.0" />
                      </font>

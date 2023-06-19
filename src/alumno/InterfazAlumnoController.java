@@ -297,6 +297,18 @@ public class InterfazAlumnoController implements Initializable {
         }
     }
 
+    @FXML
+    private void iniciarPDFLocal() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/pdflocal/pdflocal.fxml"));
+        AnchorPane pdfAnchorPane = (AnchorPane) fxmlLoader.load();
+        try {
+            profesorAnchorPane.getChildren().clear();
+            profesorAnchorPane.getChildren().add(pdfAnchorPane);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     //Ejecutar chatGPT
     @FXML
     public void iniciarGPT() throws IOException {

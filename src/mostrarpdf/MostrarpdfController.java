@@ -33,21 +33,8 @@ public class MostrarpdfController implements Initializable {
     @FXML
     private JFXTreeTableView<PdfVO> vistaPDF;
     @FXML
-    private TextField nombreArchivoBtn;
-    @FXML
-    private Button subirArchivoBtn;
-    @FXML
-    private JFXButton nuevoBtn;
-    @FXML
-    private JFXButton eliminarBtn;
-    @FXML
-    private JFXButton modificarBtn;
-    @FXML
-    private JFXButton guardarBtn;
-    @FXML
-    private JFXButton cancelarBtn;
-    @FXML
-    private AnchorPane anchorPane;
+    private Button descargarArchivoBtn;
+
     Tabla_PdfVO tpdf = new Tabla_PdfVO();
     int id = -1;
 
@@ -64,7 +51,7 @@ public class MostrarpdfController implements Initializable {
     public void accionClick() {
         int column = vistaPDF.getSelectionModel().getSelectedCells().get(0).getColumn();
         int row = vistaPDF.getSelectionModel().getSelectedCells().get(0).getRow();
-        nombreArchivoBtn.setDisable(false);
+
 
         if (row < vistaPDF.getRoot().getChildren().size() && row >= 0 && column < vistaPDF.getColumns().size() && column >= 0) {
             id = vistaPDF.getRoot().getChildren().get(row).getValue().getCodigopdf();
@@ -94,9 +81,15 @@ public class MostrarpdfController implements Initializable {
 
             } else {
                 String name = "" + vistaPDF.getRoot().getChildren().get(row).getValue().getNombrepdf();
-                nombreArchivoBtn.setText(name);
+
             }
         }
+    }
+
+    @FXML
+    public void descargarArchivo(){
+        PdfDAO pd = new PdfDAO();
+        pd.descargarPDF(id);
     }
 
 }

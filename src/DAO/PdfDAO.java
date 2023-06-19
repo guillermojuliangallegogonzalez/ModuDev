@@ -2,16 +2,16 @@ package DAO;
 
 import alumno.alumno;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import javafx.stage.FileChooser;
 import metodos.AlumnoHolder;
 import modudev.SigInController;
 import sql.Conectar;
 import VO.PdfVO;
-import java.io.ByteArrayInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import javafx.stage.Stage;
+
+import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -281,6 +281,50 @@ public class PdfDAO extends RecursiveTreeObject<PdfDAO> {
                 ps.close();
                 conec.desconectar();
             } catch (Exception ex) {
+            }
+        }
+    }
+
+    //Descargar PDF
+    public void descargarPDF(int id) {
+        Conectar cn = new Conectar();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        byte[] archivoPDF = null;
+
+        try {
+            ps = cn.getConnection().prepareStatement("SELECT archivopdf FROM pdf WHERE codigopdf = ?;");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                archivoPDF = rs.getBytes("archivopdf");
+            }
+
+            if (archivoPDF != null) {
+                FileChooser fileChooser = new FileChooser();
+                fileChooser.setTitle("Guardar archivo PDF");
+                fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivos PDF", "*.pdf"));
+                File file = fileChooser.showSaveDialog(new Stage());
+                if (file != null) {
+                    Path path = Paths.get(file.getAbsolutePath());
+                    FileOutputStream fileOutputStream = new FileOutputStream(path.toFile());
+                    fileOutputStream.write(archivoPDF);
+                    fileOutputStream.close();
+                }
+            }
+        } catch (Exception ex) {
+            System.out.println("Error al descargar el archivo PDF: " + ex.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                cn.desconectar();
+            } catch (SQLException ex) {
+                System.out.println("Error al cerrar las conexiones: " + ex.getMessage());
             }
         }
     }

@@ -101,7 +101,7 @@ public class Tabla_PdfVO {
 
     public void visualizar_PdfV1(TreeTableView<PdfVO> tabla) {
         dao = new PdfDAO();
-        ObservableList<PdfVO> lista = FXCollections.observableArrayList(dao.Listar_PdfV1());
+        ObservableList<PdfVO> lista = FXCollections.observableArrayList(dao.Listar_PdfVO());
 
         TreeTableColumn<PdfVO, Integer> columnaCodigo = new TreeTableColumn<>("codigopdf");
         columnaCodigo.setCellValueFactory(

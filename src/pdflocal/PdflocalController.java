@@ -24,17 +24,25 @@ public class PdflocalController implements Initializable {
     private TableView<pdflocalconstructor> tableView;
     @FXML
     private TableColumn<pdflocalconstructor, String> nameColumn;
+
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        // Configurar la columna de nombre
+        // Configurar las columnas
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 
+
         // Obtener la lista de archivos PDF en la carpeta
-        File folder = new File("ruta/a/la/carpeta");
+        File folder = new File("desacargas");
+
+        // Crear la ruta si no existe
+        if (!folder.exists()) {
+            folder.mkdirs();
+        }
+        System.out.println(folder.getAbsolutePath());
         File[] files = folder.listFiles((dir, name) -> name.toLowerCase().endsWith(".pdf"));
 
         // Agregar los archivos PDF a la tabla
@@ -45,5 +53,4 @@ public class PdflocalController implements Initializable {
             }
         }
     }
-    
 }

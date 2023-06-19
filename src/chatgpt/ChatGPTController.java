@@ -79,7 +79,7 @@ public class ChatGPTController implements Initializable {
 
         // Obtener la respuesta del modelo de GPT-3.5 Turbo
         String message = chatGPT(barraChat.getText());
-        
+
         // Mostrar la respuesta en la ventana de la aplicación
         chat.appendText("\n Tu: " + barraChat.getText() + "\n");
         chat.appendText("\n ChatGPT: " + message + "\n");
@@ -89,26 +89,47 @@ public class ChatGPTController implements Initializable {
 
     }
 
-    // Método para obtener una respuesta del modelo de GPT-3.5 Turbo utilizando la API de OpenAI
     public static String chatGPT(String text) throws Exception {
-        String apiKey = "YOUR_API_KEY"; // Reemplaza con tu clave de API
-
-        String url = "https://api.openai.com/v1/engines/davinci/completions";
+        String url = "https://api.openai.com/v1/completions";
         HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
 
         con.setRequestMethod("POST");
         con.setRequestProperty("Content-Type", "application/json");
-        con.setRequestProperty("Authorization", "Bearer " + "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");
+        con.setRequestProperty("Authorization", "Bearer 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");
 
-        con.setDoOutput(true); // Habilitar la escritura
+        JSONObject data = new JSONObject();
+        data.put("model", "text-davinci-003");
+        data.put("prompt", text);
+        data.put("max_tokens", 4000);
+        data.put("temperature", 1.0);
+
+        con.setDoOutput(true);
+        con.getOutputStream().write(data.toString().getBytes());
+
+        String output = new BufferedReader(new InputStreamReader(con.getInputStream())).lines()
+                .reduce((a, b) -> a + b).get();
+
+        String mensaje;
+        mensaje = new JSONObject(output).getJSONArray("choices").getJSONObject(0).getString("text");
+
+        return mensaje;
+    }
+    /*
+    // Método para obtener una respuesta del modelo de GPT-3.5 Turbo utilizando la API de OpenAI
+    public static String chatGPT(String text) throws Exception {
+        String apiKey = "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";
+        String url = "https://api.openai.com/v1/engines/davinci/completions";
+
+        HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
+        con.setRequestMethod("POST");
+        con.setRequestProperty("Content-Type", "application/json");
+        con.setRequestProperty("Authorization", "Bearer " + apiKey);
+        con.setDoOutput(true);
 
         JSONObject data = new JSONObject();
         data.put("prompt", text);
-        data.put("max_tokens", 50);
+        data.put("max_tokens", 50); // Limite el número de tokens para obtener una respuesta más corta
         data.put("temperature", 0.7);
-
-        // Esperar antes de realizar la solicitud
-        Thread.sleep(2000); // Pausa de 2 segundos
 
         try (OutputStream outputStream = con.getOutputStream()) {
             outputStream.write(data.toString().getBytes());
@@ -126,8 +147,8 @@ public class ChatGPTController implements Initializable {
                 JSONObject jsonResponse = new JSONObject(response.toString());
                 JSONArray choices = jsonResponse.getJSONArray("choices");
                 if (choices.length() > 0) {
-                    String mensaje = choices.getJSONObject(0).getString("text");
-                    return mensaje;
+                    String message = choices.getJSONObject(0).getString("text");
+                    return message;
                 }
             }
         } else {
@@ -136,6 +157,7 @@ public class ChatGPTController implements Initializable {
 
         return null;
     }
+*/
 
     public void reiniciarChat(){
         chat.setText("");
