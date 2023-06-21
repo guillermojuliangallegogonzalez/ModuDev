@@ -53,13 +53,13 @@
          </font>
       </Label>
       <JFXDatePicker fx:id="nacimientoDP" defaultColor="#4059a9" layoutX="336.0" layoutY="187.0" prefHeight="27.0" prefWidth="230.0" />
-      <JFXTextArea layoutX="14.0" layoutY="239.0" prefHeight="110.0" prefWidth="572.0" promptText="Biografía (Máximo 200 caractéres)" styleClass="biografia-black-ajustes" unFocusColor="WHITE" />
+      <JFXTextArea fx:id="biografíaTA" layoutX="14.0" layoutY="239.0" prefHeight="110.0" prefWidth="572.0" promptText="Biografía (Máximo 200 caractéres)" styleClass="biografia-black-ajustes" unFocusColor="WHITE" />
       <Button fx:id="cancelarBtn" layoutX="28.0" layoutY="371.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="259.0" styleClass="red-btn" text="Cancelar Cambios">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="guardarBtn" layoutX="311.0" layoutY="371.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="259.0" styleClass="blue-btn" text="Guardar Cambios">
+      <Button fx:id="guardarBtn" layoutX="311.0" layoutY="371.0" mnemonicParsing="false" onAction="#actualizarPerfil" prefHeight="40.0" prefWidth="259.0" styleClass="blue-btn" text="Guardar Cambios">
          <font>
             <Font size="16.0" />
          </font>

@@ -13,7 +13,7 @@ public class pdflocalconstructor {
         return name;
     }
 
-    public String getPath() {
+    public String getFilePath() {
         return path;
     }
 }

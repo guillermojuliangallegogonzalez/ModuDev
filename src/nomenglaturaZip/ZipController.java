@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+
+import alumno.alumno;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -21,6 +23,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import metodos.AlumnoHolder;
 
 /**
  * FXML Controller class
@@ -51,7 +54,7 @@ public class ZipController implements Initializable {
     private Button cancelarBtn;
     @FXML
     private Button comprimirBtn;
-
+    private alumno usuarioCargado = AlumnoHolder.getAlumno();
     /**
      * Initializes the controller class.
      */
@@ -117,7 +120,7 @@ public class ZipController implements Initializable {
             try {
                 String asignatura = asignaturaCB.getValue().toString();
                 String tema = temaTF.getText();
-                String nombreArchivo = asignatura + "_" + "T" + tema + ".zip";
+                String nombreArchivo = asignatura + "_" + "T" + tema + "_"+ usuarioCargado.getApellido() + usuarioCargado.getNombre() + ".zip";
                 String rutaArchivo = ruta + File.separator + nombreArchivo;
 
                 // Crear el archivo ZIP

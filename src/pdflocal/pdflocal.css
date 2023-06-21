@@ -2,6 +2,8 @@
  * Empty Stylesheet file.
  */
 
-.mainFxmlClass {
-
+.blue-btn{
+    -fx-background-color: #151928;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #ffffff;
 }

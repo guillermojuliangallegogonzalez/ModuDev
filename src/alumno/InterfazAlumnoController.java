@@ -139,6 +139,14 @@ public class InterfazAlumnoController implements Initializable {
                 throw new RuntimeException(e);
             }
         });
+        pmmBtn.setOnAction(event -> {
+            try {
+                iniciarVisorPDF();
+                this.valorAsignatura = "PMM";
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
         pspBtn.setOnAction(event -> {
             try {
                 iniciarVisorPDF();

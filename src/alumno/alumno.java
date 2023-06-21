@@ -4,6 +4,7 @@ import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import sql.Conectar;
 
 import java.sql.*;
+import java.time.LocalDate;
 
 public class alumno extends RecursiveTreeObject<alumno> {
 
@@ -25,6 +26,7 @@ public class alumno extends RecursiveTreeObject<alumno> {
     Boolean emp;
     Boolean sexo;
     String biografia;
+    LocalDate fechaNacimiento;
     int telefono;
     String valorasignatura;
 
@@ -62,6 +64,7 @@ public class alumno extends RecursiveTreeObject<alumno> {
     public Boolean getEmp() {return emp;}
 
     public Boolean getSexo() {return sexo;}
+    public LocalDate getFechaNacimiento(){return fechaNacimiento;}
 
     public String getBiografia() {return biografia;}
     public int getTelefono() {return  telefono;}
@@ -97,6 +100,7 @@ public class alumno extends RecursiveTreeObject<alumno> {
     public void setAd(Boolean ad) {this.ad = ad;}
 
     public void setEmp(Boolean emp) {this.emp = emp;}
+    public void setFechaNacimiento(LocalDate fechaNacimiento){this.fechaNacimiento = fechaNacimiento;}
 
     public void setBiografia(String biografia) {this.biografia = biografia;}
 

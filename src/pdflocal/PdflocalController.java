@@ -14,6 +14,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
+
+
+
 /**
  * FXML Controller class
  *
@@ -53,4 +59,18 @@ public class PdflocalController implements Initializable {
             }
         }
     }
+
+    @FXML
+    private void abrirPDF() {
+        pdflocalconstructor selectedFile = tableView.getSelectionModel().getSelectedItem();
+        if (selectedFile != null) {
+            try {
+                File file = new File(selectedFile.getFilePath());
+                Desktop.getDesktop().open(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }

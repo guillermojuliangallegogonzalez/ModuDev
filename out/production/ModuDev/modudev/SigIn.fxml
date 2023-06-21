@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
@@ -7,6 +8,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -18,7 +21,7 @@
             <Font size="20.0" />
          </font>
          <VBox.margin>
-            <Insets left="20.0" />
+            <Insets left="20.0" top="100.0" />
          </VBox.margin>
       </Label>
       <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
@@ -61,5 +64,21 @@
             <Tooltip text="Cerrar ModuDev" />
          </tooltip>
       </Button>
+      <HBox alignment="BOTTOM_RIGHT" prefHeight="68.0" prefWidth="480.0">
+         <VBox.margin>
+            <Insets top="100.0" />
+         </VBox.margin>
+         <children>
+            <JFXButton buttonType="RAISED" onAction="#sinConexion" prefHeight="48.0" prefWidth="87.0" text=" " textAlignment="JUSTIFY">
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../recursos/no-wifi.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
    </children>
 </VBox>

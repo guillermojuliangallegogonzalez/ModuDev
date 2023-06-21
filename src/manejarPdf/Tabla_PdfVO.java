@@ -1,5 +1,6 @@
 package manejarPdf;
 
+import DAO.PdfDA01;
 import DAO.PdfDAO;
 import VO.PdfVO;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
@@ -20,6 +21,7 @@ import java.util.Objects;
 public class Tabla_PdfVO {
 
     PdfDAO dao = null;
+    PdfDA01 dao1 = null;
 
     public void visualizar_PdfVO(TreeTableView<PdfVO> tabla) {
         dao = new PdfDAO();

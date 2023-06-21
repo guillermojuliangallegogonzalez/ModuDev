@@ -119,6 +119,30 @@ public class SigInController implements Initializable {
 
     }
 
+    //Ejecutar Interfaz
+    public void sinConexion() throws IOException {
+
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(SigInController.class.getResource("/offline/interfazoffline.fxml")));
+        } catch (IOException ex) {
+            Logger.getLogger(SplashScreenAlumnoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+
+        stage.setResizable(false);
+        stage.getIcons().add(new Image("/recursos/ModuDev.png"));
+        stage.setTitle("ModuDev - Offline");
+        stage.setScene(scene);
+        stage.show();
+
+        //Cerramos la ventana
+        stage = (Stage) iniciarSesionBtn.getScene().getWindow();
+        stage.close();
+
+    }
+
     public alumno login(String correo, String contrasena) {
         // Conexión a la base de datos
         Conectar conexion = new Conectar();
