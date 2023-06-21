@@ -44,7 +44,7 @@ public class MostrarpdfController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        tpdf.visualizar_PdfV1(vistaPDF);
+        tpdf.visualizar_PdfVO(vistaPDF);
     }
 
     @FXML

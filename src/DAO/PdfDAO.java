@@ -64,21 +64,7 @@ public class PdfDAO extends RecursiveTreeObject<PdfDAO> {
         Conectar conec = new Conectar();
         String sql = "SELECT * FROM pdf;";
         System.out.println(usuarioCargado.getDi());
-        if(usuarioCargado.getDi()){
-            sql = "SELECT * FROM pdf WHERE di = 1;";
-        } else if (usuarioCargado.getSge()) {
-            sql = "SELECT * FROM pdf WHERE sge = 1;";
-        }else if (usuarioCargado.getHlc()) {
-            sql = "SELECT * FROM pdf WHERE hlc = 1;";
-        }else if (usuarioCargado.getPmm()) {
-            sql = "SELECT * FROM pdf WHERE pmm = 1;";
-        }else if (usuarioCargado.getPsp()) {
-            sql = "SELECT * FROM pdf WHERE psp = 1;";
-        }else if (usuarioCargado.getAd()) {
-            sql = "SELECT * FROM pdf WHERE ad = 1;";
-        }else if (usuarioCargado.getEmp()) {
-            sql = "SELECT * FROM pdf WHERE emp = 1;";
-        }
+
         ResultSet rs = null;
         PreparedStatement ps = null;
         try {

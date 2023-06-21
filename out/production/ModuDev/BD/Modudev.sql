@@ -23,6 +23,7 @@ DROP TABLE IF EXISTS `alumnos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `alumnos` (
+  `idalumno` int NOT NULL AUTO_INCREMENT,
   `dnialumnos` varchar(9) NOT NULL,
   `nombre` varchar(45) NOT NULL,
   `apellido` varchar(45) NOT NULL,
@@ -41,19 +42,46 @@ CREATE TABLE `alumnos` (
   `sexo` tinyint DEFAULT NULL,
   `biografia` varchar(200) DEFAULT NULL,
   `telefono` int DEFAULT '0',
-  PRIMARY KEY (`dnialumnos`)
+  `valorasignatura` varchar(45) DEFAULT NULL,
+  `fecha_nacimiento` date DEFAULT NULL,
+  PRIMARY KEY (`idalumno`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `glosario`
+--
+
+DROP TABLE IF EXISTS `glosario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `glosario` (
+  `mensaje` varchar(600) NOT NULL,
+  PRIMARY KEY (`mensaje`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `alumnos`
+-- Table structure for table `pdf`
 --
 
-LOCK TABLES `alumnos` WRITE;
-/*!40000 ALTER TABLE `alumnos` DISABLE KEYS */;
-INSERT INTO `alumnos` VALUES ('77236594H','Guillermo','Gallego','gallegogonzalezg@gmail.com','56723980',0,1,0,0,0,0,0,0,0,0,0,'',0),('98321991G','Daniel','Madrid','ldsa@gmail.com','1234',1,0,0,0,0,0,0,0,0,0,0,'',0);
-/*!40000 ALTER TABLE `alumnos` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `pdf`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pdf` (
+  `codigopdf` int NOT NULL AUTO_INCREMENT,
+  `nombrepdf` varchar(45) DEFAULT NULL,
+  `archivopdf` mediumblob,
+  `di` tinyint DEFAULT '0',
+  `sge` tinyint DEFAULT '0',
+  `hlc` tinyint DEFAULT '0',
+  `pmm` tinyint DEFAULT '0',
+  `psp` tinyint DEFAULT '0',
+  `ad` tinyint DEFAULT '0',
+  `emp` tinyint DEFAULT '0',
+  PRIMARY KEY (`codigopdf`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -64,4 +92,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-04 22:24:37
+-- Dump completed on 2023-06-21 20:07:34
